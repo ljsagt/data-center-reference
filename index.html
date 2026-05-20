@@ -2741,10 +2741,11 @@ Source basis: framework derived from the project files (NHF framework, Damnang a
 </ul>
 
 <h3>10c. Component Ecosystem (NVIDIA 800V partners)</h3>
+<p>NVIDIA announced its official 800V DC ecosystem partners at OCP Global Summit October 2025. The silicon partner list spans 14 companies covering SiC MOSFETs, GaN FETs, multi-phase controllers, DrMOS, and adjacent power semi categories.</p>
 <ul>
-<li><b>Silicon providers</b>: Analog Devices, Infineon, Innoscience, MPS, Navitas, OnSemi, Renesas, ROHM, STMicroelectronics, TI</li>
-<li><b>Power system components</b>: Delta, Flex Power, Lead Wealth, LiteOn, Megmeet</li>
-<li><b>Datacenter power systems</b>: Eaton, Schneider, Vertiv</li>
+<li><b>Silicon providers (14)</b>: Analog Devices (ADI), Alpha &amp;amp; Omega Semiconductor (AOSL), Efficient Power Conversion (EPC, private), Infineon Technologies (IFX), Innoscience (Chinese), Monolithic Power Systems (MPWR), Navitas Semiconductor (NVTS), ON Semiconductor (ON), Power Integrations (POWI), Renesas Electronics (6723.T), Richtek Technology (Taiwanese, MediaTek subsidiary), ROHM Semiconductor (6963.T), STMicroelectronics (STM), Texas Instruments (TXN)</li>
+<li><b>Power system components</b>: Delta Electronics (2308.TW), Flex Power, Lead Wealth, LiteOn, Megmeet</li>
+<li><b>Datacenter power systems</b>: Eaton (ETN), Schneider Electric (SU.PA), Vertiv (VRT)</li>
 </ul>
 
 <div class=&quot;verify&quot;>
@@ -3561,6 +3562,24 @@ Source basis: framework derived from the project files (NHF framework, Damnang a
 <h3>1a. The Transient Problem Is Worse Than the Average</h3>
 <p>AI workloads are not steady-state. When large blocks of tensor compute switch on together, current can swing by hundreds of amps within microseconds. The board's distant capacitors and VRMs cannot respond fast enough. If core voltage (Vcore) sags by even tens of millivolts during a transient, timing margin shrinks and the chip throttles or errors. The VRM's real job is not just stepping voltage down. It is holding voltage steady while load underneath it moves.</p>
 
+<h3>1b. The Custom ASIC TDP Variable</h3>
+
+<p>The arithmetic problem above assumes NVIDIA GPU TDP levels (700W to 2,300W). Custom AI ASICs from hyperscalers and specialty silicon vendors span a much wider TDP range, and the power architecture pressure scales accordingly. Low-TDP ASICs can stay on 12V Si VRMs indefinitely. Extreme high-power ASICs make vertical power delivery essentially mandatory regardless of cost. The same physical &quot;AI server&quot; label spans architectures with completely different power supply chains.</p>
+
+<table>
+<tr><th>Chip Class</th><th>Approx TDP</th><th>Power Architecture Implication</th><th>Supply Chain Driver</th></tr>
+<tr class=&quot;arith&quot;><td><b>Google TPU v7 (Ironwood)</b></td><td>~500 W</td><td>12V Si VRMs sufficient; no urgency for 48V or GaN</td><td>Stays on legacy multi-phase buck supply chain (MPS, Renesas, ADI). Does not pull demand into 48V or GaN.</td></tr>
+<tr class=&quot;arith&quot;><td><b>Amazon Trainium 3</b></td><td>~600 W</td><td>12V Si VRMs sufficient</td><td>Same as TPU v7. Sourcing diversification across multi-phase buck vendors rather than architectural transition.</td></tr>
+<tr class=&quot;arith&quot;><td><b>Meta MTIA Gen 4</b></td><td>Tiered, sub-NVIDIA</td><td>Likely 12V Si across the tier</td><td>MTIA roadmap is tiered (300/400/450/500W class); diversification across existing 12V suppliers</td></tr>
+<tr class=&quot;arith&quot;><td><b>NVIDIA H100 to GB300</b></td><td>700 to 1,400 W</td><td>Drives the entire 48V/TLVR/VPD narrative</td><td>Pulls demand into TLVR coupled inductors (Coilcraft, TDK), high-spec MLCCs (Murata/SEMCO), advanced multi-phase controllers</td></tr>
+<tr class=&quot;arith&quot;><td><b>NVIDIA Vera Rubin / Rubin Ultra</b></td><td>2,000 to 3,500 W+ projected</td><td>Forces 48V / 800V / VPD adoption</td><td>Pulls demand into the 14-company 800V DC partner list and Vertical Power Delivery suppliers (Infineon, Vicor, AOSL)</td></tr>
+<tr class=&quot;arith&quot;><td><b>Cerebras WSE-3 (wafer-scale)</b></td><td>15,000 to 25,000 W per unit</td><td>Vertical Power Delivery essentially mandatory</td><td>Direct demand for Vicor Factorized Power Architecture and adjacent VPD components; cannot be served by conventional VRM at this current scale</td></tr>
+</table>
+
+<div class=&quot;callout&quot;>
+<b>Why this matters for the supply chain map.</b> If custom ASICs capture 15 to 25 percent of total AI compute (TPU + Trainium + MTIA + Inferentia combined), the addressable market for 48V, GaN, and VPD architectures narrows from &quot;all of AI&quot; to &quot;NVIDIA high-TDP GPUs plus Cerebras-class wafer-scale&quot;. The legacy 12V multi-phase buck supply chain (MPS, Renesas, ADI, Vishay, AOSL, TDK inductors) does not shrink with the architectural transition; it continues serving the custom ASIC tier at its own pace. Which chip class is gaining share at the hyperscalers determines which supply chain expands fastest.
+</div>
+
 <!-- ============ 2. FOUR PATHS ============ -->
 <h2 id=&quot;section-d-h2-02-2-the-four-architectural-paths&quot;>2. The Four Architectural Paths</h2>
 <p>There is no single accepted answer for how to take 48V (or whatever intermediate bus) down to 0.65V at thousands of amps. Four paths compete in parallel. They form a spectrum from incremental (the 25-year standard) to radical (remove the final VRM stage altogether).</p>
@@ -3708,6 +3727,128 @@ Source basis: framework derived from the project files (NHF framework, Damnang a
 <li>AOSL is also on NVIDIA's October 2025 official 800VDC partner list (14 partners), spanning SiC MOSFETs, GaN FETs, multi-phase controllers, and DrMOS under one roof.</li>
 </ul>
 </div>
+
+<h3>3e. TLVR: The Dominant Inductor Topology and the Switching-Cost Moat</h3>
+
+<p>Most high-current GPU VRMs today are not built with discrete per-phase inductors. They use TLVR (Trans-Inductor Voltage Regulator), where the inductors of adjacent phases are magnetically coupled through a shared transformer-like core. The coupling lets current redistribute between phases faster than discrete inductors allow, which improves transient response when GPU current swings hundreds of amps in microseconds.</p>
+
+<svg viewBox=&quot;0 0 900 360&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; style=&quot;max-width:900px; margin:8px auto; display:block;&quot;>
+  <rect x=&quot;10&quot; y=&quot;10&quot; width=&quot;420&quot; height=&quot;340&quot; fill=&quot;#fafafa&quot; stroke=&quot;#888&quot; stroke-width=&quot;1&quot;/>
+  <text x=&quot;220&quot; y=&quot;35&quot; text-anchor=&quot;middle&quot; font-family=&quot;Calibri&quot; font-size=&quot;13&quot; font-weight=&quot;bold&quot;>Discrete Per-Phase Inductors (Legacy)</text>
+  <text x=&quot;220&quot; y=&quot;52&quot; text-anchor=&quot;middle&quot; font-family=&quot;Calibri&quot; font-size=&quot;10.5&quot; fill=&quot;#555&quot;>Each phase has its own independent inductor; no magnetic linkage</text>
+
+  <g font-family=&quot;Calibri&quot; font-size=&quot;10&quot;>
+  <rect x=&quot;35&quot; y=&quot;80&quot; width=&quot;55&quot; height=&quot;35&quot; fill=&quot;#e2d6f5&quot; stroke=&quot;#555&quot;/>
+  <text x=&quot;62.5&quot; y=&quot;103&quot; text-anchor=&quot;middle&quot;>DrMOS 1</text>
+  <line x1=&quot;90&quot; y1=&quot;97&quot; x2=&quot;120&quot; y2=&quot;97&quot; stroke=&quot;#000&quot; stroke-width=&quot;1.5&quot;/>
+  <path d=&quot;M 120 97 q 5 -10 10 0 q 5 -10 10 0 q 5 -10 10 0 q 5 -10 10 0&quot; fill=&quot;none&quot; stroke=&quot;#1a4a8a&quot; stroke-width=&quot;1.8&quot;/>
+  <text x=&quot;140&quot; y=&quot;80&quot; text-anchor=&quot;middle&quot; font-size=&quot;9&quot; fill=&quot;#1a4a8a&quot;>L1</text>
+  <line x1=&quot;160&quot; y1=&quot;97&quot; x2=&quot;195&quot; y2=&quot;97&quot; stroke=&quot;#000&quot; stroke-width=&quot;1.5&quot;/>
+  <circle cx=&quot;200&quot; cy=&quot;97&quot; r=&quot;4&quot; fill=&quot;#000&quot;/>
+  <text x=&quot;222&quot; y=&quot;100&quot; font-size=&quot;9&quot;>Phase 1 out</text>
+
+  <rect x=&quot;35&quot; y=&quot;135&quot; width=&quot;55&quot; height=&quot;35&quot; fill=&quot;#e2d6f5&quot; stroke=&quot;#555&quot;/>
+  <text x=&quot;62.5&quot; y=&quot;158&quot; text-anchor=&quot;middle&quot;>DrMOS 2</text>
+  <line x1=&quot;90&quot; y1=&quot;152&quot; x2=&quot;120&quot; y2=&quot;152&quot; stroke=&quot;#000&quot; stroke-width=&quot;1.5&quot;/>
+  <path d=&quot;M 120 152 q 5 -10 10 0 q 5 -10 10 0 q 5 -10 10 0 q 5 -10 10 0&quot; fill=&quot;none&quot; stroke=&quot;#1a4a8a&quot; stroke-width=&quot;1.8&quot;/>
+  <text x=&quot;140&quot; y=&quot;135&quot; text-anchor=&quot;middle&quot; font-size=&quot;9&quot; fill=&quot;#1a4a8a&quot;>L2</text>
+  <line x1=&quot;160&quot; y1=&quot;152&quot; x2=&quot;195&quot; y2=&quot;152&quot; stroke=&quot;#000&quot; stroke-width=&quot;1.5&quot;/>
+  <circle cx=&quot;200&quot; cy=&quot;152&quot; r=&quot;4&quot; fill=&quot;#000&quot;/>
+  <text x=&quot;222&quot; y=&quot;155&quot; font-size=&quot;9&quot;>Phase 2 out</text>
+
+  <rect x=&quot;35&quot; y=&quot;190&quot; width=&quot;55&quot; height=&quot;35&quot; fill=&quot;#e2d6f5&quot; stroke=&quot;#555&quot;/>
+  <text x=&quot;62.5&quot; y=&quot;213&quot; text-anchor=&quot;middle&quot;>DrMOS 3</text>
+  <line x1=&quot;90&quot; y1=&quot;207&quot; x2=&quot;120&quot; y2=&quot;207&quot; stroke=&quot;#000&quot; stroke-width=&quot;1.5&quot;/>
+  <path d=&quot;M 120 207 q 5 -10 10 0 q 5 -10 10 0 q 5 -10 10 0 q 5 -10 10 0&quot; fill=&quot;none&quot; stroke=&quot;#1a4a8a&quot; stroke-width=&quot;1.8&quot;/>
+  <text x=&quot;140&quot; y=&quot;190&quot; text-anchor=&quot;middle&quot; font-size=&quot;9&quot; fill=&quot;#1a4a8a&quot;>L3</text>
+  <line x1=&quot;160&quot; y1=&quot;207&quot; x2=&quot;195&quot; y2=&quot;207&quot; stroke=&quot;#000&quot; stroke-width=&quot;1.5&quot;/>
+  <circle cx=&quot;200&quot; cy=&quot;207&quot; r=&quot;4&quot; fill=&quot;#000&quot;/>
+  <text x=&quot;222&quot; y=&quot;210&quot; font-size=&quot;9&quot;>Phase 3 out</text>
+
+  <rect x=&quot;35&quot; y=&quot;245&quot; width=&quot;55&quot; height=&quot;35&quot; fill=&quot;#e2d6f5&quot; stroke=&quot;#555&quot;/>
+  <text x=&quot;62.5&quot; y=&quot;268&quot; text-anchor=&quot;middle&quot;>DrMOS 4</text>
+  <line x1=&quot;90&quot; y1=&quot;262&quot; x2=&quot;120&quot; y2=&quot;262&quot; stroke=&quot;#000&quot; stroke-width=&quot;1.5&quot;/>
+  <path d=&quot;M 120 262 q 5 -10 10 0 q 5 -10 10 0 q 5 -10 10 0 q 5 -10 10 0&quot; fill=&quot;none&quot; stroke=&quot;#1a4a8a&quot; stroke-width=&quot;1.8&quot;/>
+  <text x=&quot;140&quot; y=&quot;245&quot; text-anchor=&quot;middle&quot; font-size=&quot;9&quot; fill=&quot;#1a4a8a&quot;>L4</text>
+  <line x1=&quot;160&quot; y1=&quot;262&quot; x2=&quot;195&quot; y2=&quot;262&quot; stroke=&quot;#000&quot; stroke-width=&quot;1.5&quot;/>
+  <circle cx=&quot;200&quot; cy=&quot;262&quot; r=&quot;4&quot; fill=&quot;#000&quot;/>
+  <text x=&quot;222&quot; y=&quot;265&quot; font-size=&quot;9&quot;>Phase 4 out</text>
+  </g>
+
+  <text x=&quot;220&quot; y=&quot;315&quot; text-anchor=&quot;middle&quot; font-family=&quot;Calibri&quot; font-size=&quot;10&quot; font-style=&quot;italic&quot; fill=&quot;#555&quot;>Slower transient response: each phase responds independently</text>
+  <text x=&quot;220&quot; y=&quot;332&quot; text-anchor=&quot;middle&quot; font-family=&quot;Calibri&quot; font-size=&quot;10&quot; font-style=&quot;italic&quot; fill=&quot;#555&quot;>Inductors swappable individually with controller re-tune</text>
+
+  <rect x=&quot;465&quot; y=&quot;10&quot; width=&quot;425&quot; height=&quot;340&quot; fill=&quot;#fafafa&quot; stroke=&quot;#888&quot; stroke-width=&quot;1&quot;/>
+  <text x=&quot;677&quot; y=&quot;35&quot; text-anchor=&quot;middle&quot; font-family=&quot;Calibri&quot; font-size=&quot;13&quot; font-weight=&quot;bold&quot;>TLVR Coupled Inductors (Current Standard)</text>
+  <text x=&quot;677&quot; y=&quot;52&quot; text-anchor=&quot;middle&quot; font-family=&quot;Calibri&quot; font-size=&quot;10.5&quot; fill=&quot;#555&quot;>Phases share a magnetic core; current redistributes across phases</text>
+
+  <g font-family=&quot;Calibri&quot; font-size=&quot;10&quot;>
+  <rect x=&quot;490&quot; y=&quot;80&quot; width=&quot;55&quot; height=&quot;35&quot; fill=&quot;#e2d6f5&quot; stroke=&quot;#555&quot;/>
+  <text x=&quot;517.5&quot; y=&quot;103&quot; text-anchor=&quot;middle&quot;>DrMOS 1</text>
+  <line x1=&quot;545&quot; y1=&quot;97&quot; x2=&quot;595&quot; y2=&quot;97&quot; stroke=&quot;#000&quot; stroke-width=&quot;1.5&quot;/>
+
+  <rect x=&quot;490&quot; y=&quot;135&quot; width=&quot;55&quot; height=&quot;35&quot; fill=&quot;#e2d6f5&quot; stroke=&quot;#555&quot;/>
+  <text x=&quot;517.5&quot; y=&quot;158&quot; text-anchor=&quot;middle&quot;>DrMOS 2</text>
+  <line x1=&quot;545&quot; y1=&quot;152&quot; x2=&quot;595&quot; y2=&quot;152&quot; stroke=&quot;#000&quot; stroke-width=&quot;1.5&quot;/>
+
+  <rect x=&quot;490&quot; y=&quot;190&quot; width=&quot;55&quot; height=&quot;35&quot; fill=&quot;#e2d6f5&quot; stroke=&quot;#555&quot;/>
+  <text x=&quot;517.5&quot; y=&quot;213&quot; text-anchor=&quot;middle&quot;>DrMOS 3</text>
+  <line x1=&quot;545&quot; y1=&quot;207&quot; x2=&quot;595&quot; y2=&quot;207&quot; stroke=&quot;#000&quot; stroke-width=&quot;1.5&quot;/>
+
+  <rect x=&quot;490&quot; y=&quot;245&quot; width=&quot;55&quot; height=&quot;35&quot; fill=&quot;#e2d6f5&quot; stroke=&quot;#555&quot;/>
+  <text x=&quot;517.5&quot; y=&quot;268&quot; text-anchor=&quot;middle&quot;>DrMOS 4</text>
+  <line x1=&quot;545&quot; y1=&quot;262&quot; x2=&quot;595&quot; y2=&quot;262&quot; stroke=&quot;#000&quot; stroke-width=&quot;1.5&quot;/>
+
+  <rect x=&quot;595&quot; y=&quot;75&quot; width=&quot;80&quot; height=&quot;210&quot; fill=&quot;#fff7e8&quot; stroke=&quot;#c7882a&quot; stroke-width=&quot;2&quot;/>
+  <text x=&quot;635&quot; y=&quot;68&quot; text-anchor=&quot;middle&quot; font-size=&quot;10&quot; font-weight=&quot;bold&quot; fill=&quot;#c7882a&quot;>Shared</text>
+  <text x=&quot;635&quot; y=&quot;296&quot; text-anchor=&quot;middle&quot; font-size=&quot;10&quot; font-weight=&quot;bold&quot; fill=&quot;#c7882a&quot;>magnetic core</text>
+
+  <path d=&quot;M 605 97 q 8 -10 16 0 q 8 -10 16 0 q 8 -10 16 0 q 8 -10 16 0&quot; fill=&quot;none&quot; stroke=&quot;#1a4a8a&quot; stroke-width=&quot;1.8&quot;/>
+  <path d=&quot;M 605 152 q 8 -10 16 0 q 8 -10 16 0 q 8 -10 16 0 q 8 -10 16 0&quot; fill=&quot;none&quot; stroke=&quot;#1a4a8a&quot; stroke-width=&quot;1.8&quot;/>
+  <path d=&quot;M 605 207 q 8 -10 16 0 q 8 -10 16 0 q 8 -10 16 0 q 8 -10 16 0&quot; fill=&quot;none&quot; stroke=&quot;#1a4a8a&quot; stroke-width=&quot;1.8&quot;/>
+  <path d=&quot;M 605 262 q 8 -10 16 0 q 8 -10 16 0 q 8 -10 16 0 q 8 -10 16 0&quot; fill=&quot;none&quot; stroke=&quot;#1a4a8a&quot; stroke-width=&quot;1.8&quot;/>
+
+  <path d=&quot;M 635 115 L 635 140&quot; stroke=&quot;#c7882a&quot; stroke-width=&quot;1&quot; stroke-dasharray=&quot;3,2&quot; marker-end=&quot;url(#tlvr-arr)&quot;/>
+  <path d=&quot;M 635 170 L 635 195&quot; stroke=&quot;#c7882a&quot; stroke-width=&quot;1&quot; stroke-dasharray=&quot;3,2&quot; marker-end=&quot;url(#tlvr-arr)&quot;/>
+  <path d=&quot;M 635 225 L 635 250&quot; stroke=&quot;#c7882a&quot; stroke-width=&quot;1&quot; stroke-dasharray=&quot;3,2&quot; marker-end=&quot;url(#tlvr-arr)&quot;/>
+
+  <defs>
+    <marker id=&quot;tlvr-arr&quot; viewBox=&quot;0 0 10 10&quot; refX=&quot;5&quot; refY=&quot;5&quot; markerWidth=&quot;5&quot; markerHeight=&quot;5&quot; orient=&quot;auto&quot;>
+      <path d=&quot;M 0 0 L 10 5 L 0 10 z&quot; fill=&quot;#c7882a&quot;/>
+    </marker>
+  </defs>
+
+  <g font-family=&quot;Calibri&quot; font-size=&quot;10&quot;>
+  <line x1=&quot;675&quot; y1=&quot;97&quot; x2=&quot;730&quot; y2=&quot;97&quot; stroke=&quot;#000&quot; stroke-width=&quot;1.5&quot;/>
+  <circle cx=&quot;735&quot; cy=&quot;97&quot; r=&quot;4&quot; fill=&quot;#000&quot;/>
+  <text x=&quot;757&quot; y=&quot;100&quot; font-size=&quot;9&quot;>Phase 1 out</text>
+  <line x1=&quot;675&quot; y1=&quot;152&quot; x2=&quot;730&quot; y2=&quot;152&quot; stroke=&quot;#000&quot; stroke-width=&quot;1.5&quot;/>
+  <circle cx=&quot;735&quot; cy=&quot;152&quot; r=&quot;4&quot; fill=&quot;#000&quot;/>
+  <text x=&quot;757&quot; y=&quot;155&quot; font-size=&quot;9&quot;>Phase 2 out</text>
+  <line x1=&quot;675&quot; y1=&quot;207&quot; x2=&quot;730&quot; y2=&quot;207&quot; stroke=&quot;#000&quot; stroke-width=&quot;1.5&quot;/>
+  <circle cx=&quot;735&quot; cy=&quot;207&quot; r=&quot;4&quot; fill=&quot;#000&quot;/>
+  <text x=&quot;757&quot; y=&quot;210&quot; font-size=&quot;9&quot;>Phase 3 out</text>
+  <line x1=&quot;675&quot; y1=&quot;262&quot; x2=&quot;730&quot; y2=&quot;262&quot; stroke=&quot;#000&quot; stroke-width=&quot;1.5&quot;/>
+  <circle cx=&quot;735&quot; cy=&quot;262&quot; r=&quot;4&quot; fill=&quot;#000&quot;/>
+  <text x=&quot;757&quot; y=&quot;265&quot; font-size=&quot;9&quot;>Phase 4 out</text>
+  </g>
+
+  <text x=&quot;677&quot; y=&quot;315&quot; text-anchor=&quot;middle&quot; font-family=&quot;Calibri&quot; font-size=&quot;10&quot; font-style=&quot;italic&quot; fill=&quot;#555&quot;>Faster transient response: load step on one phase pulls current from others</text>
+  <text x=&quot;677&quot; y=&quot;332&quot; text-anchor=&quot;middle&quot; font-family=&quot;Calibri&quot; font-size=&quot;10&quot; font-style=&quot;italic&quot; fill=&quot;#555&quot;>Inductor and power stage must be re-qualified together</text>
+</svg>
+
+<div class=&quot;callout&quot;>
+<b>The supply chain consequence.</b> In a discrete-inductor design, each phase's inductor can be swapped with controller re-tuning alone. In TLVR, changing the inductor supplier means re-qualifying the inductor magnetics, the controller tuning, the power stage drive characteristics, and the thermal profile together as a single coupled system. This re-qualification cost is one of the structural reasons the 12V VRM ecosystem persists longer than purely technical analysis predicts, even as 48V architectures advance at the rack distribution level.
+</div>
+
+<h3>3e.1 TLVR Inductor Suppliers</h3>
+<table>
+<tr><th>Supplier</th><th>Listing</th><th>Position</th></tr>
+<tr class=&quot;vrm&quot;><td><b>Coilcraft</b></td><td>Private (US)</td><td>Widely regarded as the #1 TLVR inductor supplier; no public equity exposure available</td></tr>
+<tr class=&quot;vrm&quot;><td><b>TDK Corporation</b></td><td>6762.T (Japan)</td><td>#2 across multiple AI passive families including TLVR magnetics; broadest portfolio exposure</td></tr>
+<tr class=&quot;vrm&quot;><td><b>Vishay Intertechnology</b></td><td>VSH (US)</td><td>Book-to-bill 1.20 (Q4 2025) with management citing AI power applications; supplies discrete and integrated magnetics</td></tr>
+<tr class=&quot;vrm&quot;><td><b>Sumida Corporation</b></td><td>6817.T (Japan)</td><td>Smaller-cap Japanese specialist; acquired Schmidbauer Transformatoren in October 2025 (80% stake, EUR 33.9M)</td></tr>
+</table>
 
 <!-- ============ 4. PATH 2 LOWER BUS ============ -->
 <h2 id=&quot;section-d-h2-04-4-path-2-lower-the-intermediate-bus&quot;>4. Path 2: Lower the Intermediate Bus</h2>
