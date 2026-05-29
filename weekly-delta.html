@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Weekly Data Center Scorecard Delta - 2026-05-29</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="robots" content="noindex"/>
+<style>
+  body {
+    margin: 0;
+    background: #fafaf9;
+    color: #1a1a1a;
+    font: 14px/1.55 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 26px 22px 42px; }
+  h1 { font-size: 24px; margin: 0 0 4px; }
+  .sub { color: #666; margin-bottom: 18px; }
+  .card {
+    background: #fff;
+    border: 1px solid #e2e2dc;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+  }
+  h2 { font-size: 16px; margin: 0 0 10px; }
+  ul { margin: 0; padding-left: 20px; }
+  li { margin: 7px 0; }
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .metric { background: #f6f5f0; border: 1px solid #e6e3d8; border-radius: 6px; padding: 12px; }
+  .metric b { display: block; font-size: 22px; margin-bottom: 2px; color: #1f5f9f; }
+  .small { color: #666; font-size: 12px; }
+  .tag { display: inline-block; border-radius: 3px; padding: 1px 6px; font-size: 11px; margin-right: 5px; }
+  .bottleneck { background: #fee7d4; color: #7a3408; }
+  .pricing { background: #dde9fa; color: #0f3866; }
+  .moat { background: #e7d6e2; color: #5a1b48; }
+  table { width: 100%; border-collapse: collapse; background: #fff; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid #eee; text-align: left; vertical-align: top; }
+  th { background: #f6f5f0; color: #555; font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+  .delta { color: #0f6f3e; font-weight: 700; white-space: nowrap; }
+  .table-wrap { overflow-x: auto; }
+  @media (max-width: 760px) {
+    .grid { grid-template-columns: 1fr; }
+    .table-wrap table { min-width: 760px; }
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <h1>Weekly Incremental Change</h1>
+  <div class="sub">2026-05-29 refresh versus 2026-05-23 baseline</div>
+
+  <section class="card">
+    <h2>One Page Summary</h2>
+    <ul>
+      <li>No scores went down this week.</li>
+      <li>The biggest upgrade was ABF package substrate. It moved up in bottleneck, pricing power, and moat.</li>
+      <li>Pricing power improved most in ABF, HBM, and MLCC because this week's sources showed stronger ASP, mix, or price contract evidence.</li>
+      <li>Bottleneck risk increased in ABF substrates, MLCC, power semiconductors, CPO lasers/modules, and dry-type transformers.</li>
+      <li>Moat improved only where the evidence showed hard qualification barriers or difficult manufacturing: ABF package substrate and CPO module.</li>
+    </ul>
+  </section>
+
+  <section class="grid">
+    <div class="metric">
+      <b>7</b>
+      Bottleneck upgrades
+      <div class="small">ABF substrate, MLCC, power semis, CPO chain, transformers</div>
+    </div>
+    <div class="metric">
+      <b>5</b>
+      Pricing upgrades
+      <div class="small">ABF film/substrate, HBM, MLCC, dry-type transformers</div>
+    </div>
+    <div class="metric">
+      <b>2</b>
+      Moat upgrades
+      <div class="small">ABF package substrate and CPO module</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Pricing Power</h2>
+    <ul>
+      <li><span class="tag pricing">pricing</span><strong>Ajinomoto ABF film:</strong> Pricing moved from 4 to 5. ABF substrate ASP evidence is now explicit, and film allocation still favors major AI customers.</li>
+      <li><span class="tag pricing">pricing</span><strong>ABF flip-chip package substrate:</strong> Pricing moved from 4 to 5. Sources pointed to 2026 ASP up 30-40% and customer acceptance of higher prices.</li>
+      <li><span class="tag pricing">pricing</span><strong>HBM:</strong> Pricing moved from 4 to 5. AI demand is pulling memory supply away from other markets, keeping memory pricing high.</li>
+      <li><span class="tag pricing">pricing</span><strong>MLCC:</strong> Pricing moved from 4 to 5. Existing products are not broadly being repriced, but high-end AI products have mix-driven ASP uplift.</li>
+      <li><span class="tag pricing">pricing</span><strong>Dry-type transformers:</strong> Pricing moved from 3 to 4. Long lead times support stronger supplier pricing, but not enough for a moat upgrade.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Bottleneck</h2>
+    <ul>
+      <li><span class="tag bottleneck">bottleneck</span><strong>ABF flip-chip package substrate:</strong> Bottleneck moved from 4 to 5. Supply gap is widening, new capacity is reserved, and key materials remain tight.</li>
+      <li><span class="tag bottleneck">bottleneck</span><strong>MLCC:</strong> Bottleneck moved from 4 to 5. High-spec AI demand, high utilization, and conservative capacity additions point to tighter supply.</li>
+      <li><span class="tag bottleneck">bottleneck</span><strong>Power semiconductors:</strong> Bottleneck moved from 4 to 5. 800V AI power architecture and GaN/SiC shortage evidence increased pressure.</li>
+      <li><span class="tag bottleneck">bottleneck</span><strong>External laser source:</strong> Bottleneck moved from 4 to 5. Hyperscaler demand is larger than legacy optical manufacturing lines were built to handle.</li>
+      <li><span class="tag bottleneck">bottleneck</span><strong>CPO module:</strong> Bottleneck moved from 3 to 4. CPO is still early, but manufacturing capacity and optical coupling are already constraints.</li>
+      <li><span class="tag bottleneck">bottleneck</span><strong>Dry-type transformers:</strong> Bottleneck moved from 3 to 4. AIDC sources cited 72-80 week transformer lead times through 2028.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Moat</h2>
+    <ul>
+      <li><span class="tag moat">moat</span><strong>ABF flip-chip package substrate:</strong> Moat moved from 3 to 4. New ABF lines take 1.5-2 years, key T-glass supply is concentrated, and high-layer yields remain difficult.</li>
+      <li><span class="tag moat">moat</span><strong>CPO module:</strong> Moat moved from 3 to 4. The evidence points to hard packaging, optical coupling, and manufacturing yield barriers.</li>
+      <li><span class="tag moat">moat</span><strong>All other changed rows:</strong> Moat did not move. The evidence showed tighter supply or higher pricing, but not enough new qualification or process barriers.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Changed Rows</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Component</th><th>Previous</th><th>New</th><th>Change</th><th>Simple reason</th></tr></thead>
+        <tbody>
+          <tr><td>Ajinomoto ABF film</td><td>5 / 4 / 5 / 14</td><td>5 / 5 / 5 / 15</td><td class="delta">Pricing +1</td><td>Explicit ASP and allocation evidence.</td></tr>
+          <tr><td>ABF flip-chip package substrate</td><td>4 / 4 / 3 / 11</td><td>5 / 5 / 4 / 14</td><td class="delta">B +1, P +1, M +1</td><td>Wider supply gap, higher ASP, harder qualification.</td></tr>
+          <tr><td>HBM</td><td>5 / 4 / 4 / 13</td><td>5 / 5 / 4 / 14</td><td class="delta">Pricing +1</td><td>AI memory demand keeps price environment tight.</td></tr>
+          <tr><td>MLCC</td><td>4 / 4 / 4 / 12</td><td>5 / 5 / 4 / 14</td><td class="delta">B +1, P +1</td><td>High utilization and AI product mix uplift.</td></tr>
+          <tr><td>Power semiconductors</td><td>4 / 4 / 4 / 12</td><td>5 / 4 / 4 / 13</td><td class="delta">Bottleneck +1</td><td>800V and GaN/SiC shortage evidence.</td></tr>
+          <tr><td>External laser source</td><td>4 / 4 / 4 / 12</td><td>5 / 4 / 4 / 13</td><td class="delta">Bottleneck +1</td><td>Hyperscaler capacity lock-in and InP ramp limits.</td></tr>
+          <tr><td>CPO module</td><td>3 / 3 / 3 / 9</td><td>4 / 3 / 4 / 11</td><td class="delta">B +1, M +1</td><td>Harder manufacturing and packaging constraints.</td></tr>
+          <tr><td>Small dry-type transformers</td><td>3 / 3 / 3 / 9</td><td>4 / 4 / 3 / 11</td><td class="delta">B +1, P +1</td><td>72-80 week lead times and multi-year tightness.</td></tr>
+          <tr><td>UPS dry-type isolation transformer</td><td>3 / 3 / 3 / 9</td><td>4 / 4 / 3 / 11</td><td class="delta">B +1, P +1</td><td>Same transformer scarcity mapped to UPS power path.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="small">Score order: bottleneck / pricing power / moat / total.</div>
+  </section>
+
+  <section class="card">
+    <h2>Important But No Score Change</h2>
+    <ul>
+      <li><strong>CoWoS:</strong> Still tight, but already at max bottleneck and moat scores.</li>
+      <li><strong>EML, DFB, and pluggable optics:</strong> Demand was confirmed, but there was not enough new pricing evidence to move scores.</li>
+      <li><strong>TLVR inductors:</strong> Demand and cost pass-through were confirmed, but there was no new allocation or lead-time data.</li>
+      <li><strong>Bearings and fan motors:</strong> Demand is stronger, but new capacity is also being added.</li>
+      <li><strong>OLTC and EHV transformer stack:</strong> System-level transformer shortage was confirmed, but OLTC-specific scores were already high.</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Watchlist</h2>
+    <ul>
+      <li><strong>Liquid cold plates / MLCP:</strong> Important evidence, but the current scorecard has no dedicated cold-plate row.</li>
+      <li><strong>800V HVDC / solid-state transformer:</strong> Important architecture change, but only partly captured by current power semiconductor and transformer rows.</li>
+      <li><strong>Behind-the-meter power:</strong> Important system constraint, but too broad to assign to one engine, switchgear, or fuel-system component.</li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>
