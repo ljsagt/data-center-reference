@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Weekly Data Center Scorecard Delta - 2026-06-19</title>
+<title>Weekly Data Center Scorecard Delta - 2026-06-20</title>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta name="robots" content="noindex"/>
 <style>
@@ -47,64 +47,62 @@
 <body>
 <main class="wrap">
   <h1>Weekly Incremental Change</h1>
-  <div class="sub">2026-06-19 refresh versus 2026-06-15 baseline</div>
+  <div class="sub">2026-06-20 refresh versus 2026-06-19 baseline</div>
 
   <section class="card">
     <h2>One Page Summary</h2>
     <ul>
-      <li>This refresh used 12 post-baseline local sell-side summary files from June 15-19 and the existing June 15 Third Bridge package as context.</li>
-      <li>No existing scorecard row changed this week. The evidence refreshed the tightest rows, but none crossed a new scoring threshold beyond the June 15 baseline.</li>
-      <li>ABF and advanced packaging stayed strongest. AI substrate ASP expectations moved higher again, and CoWoS still looks like the main near-term back-end choke point.</li>
-      <li>HBM, LPDDR5X, and MLCC all stayed tight. HBM4E samples shipped, LPDDR demand remained Vera-driven, and AI-server MLCC lead times reached roughly 24 weeks in the new checks.</li>
-      <li>Power semiconductors also stayed strong. Pricing is still moving up even though the full 800V HVDC volume ramp remains more back-end weighted into 2027.</li>
+      <li>This refresh used the local June 20 Third Bridge package: one assembled topic/key-points HTML and 66 validated transcript exports. The two June 19 sell-side files were rechecked as already reflected in the baseline.</li>
+      <li>Three existing scorecard rows changed: EML, HDI multilayer PCB, and backplane PCB.</li>
+      <li>Pricing power improved only for EML. The optical expert said scarce EML can hold higher prices or secure price guarantees because customers have few alternatives.</li>
+      <li>Bottleneck and moat improved for AI-server PCB. Rubin-class HDI and 56/78-layer backplanes are harder to build, qualified suppliers are limited, and new HDI capacity takes at least three quarters.</li>
+      <li>ABF, CoWoS, HBM, MLCC, and power semiconductors stayed very strong, but their scorecard rows were already at ceiling or near-ceiling levels.</li>
+      <li>Watch the late-2027 risk: optical modules and PCB both have overbooking or substitution risk if supply catches demand or CPO/glass/ceramic paths reduce PCB content.</li>
     </ul>
   </section>
 
   <section class="grid">
     <div class="metric">
-      <b>0</b>
+      <b>2</b>
       Bottleneck upgrades
-      <div class="small">Tightness confirmed, but no row moved higher</div>
+      <div class="small">HDI multilayer PCB, backplane PCB</div>
     </div>
     <div class="metric">
-      <b>0</b>
-      Pricing upgrades
-      <div class="small">Pricing stayed strong, but no row changed</div>
+      <b>1</b>
+      Pricing upgrade
+      <div class="small">Electro-absorption modulated laser</div>
     </div>
     <div class="metric">
-      <b>0</b>
+      <b>2</b>
       Moat upgrades
-      <div class="small">Qualification barriers held, but no row moved</div>
+      <div class="small">HDI multilayer PCB, backplane PCB</div>
     </div>
   </section>
 
   <section class="card">
     <h2>Pricing Power</h2>
     <ul>
-      <li><span class="tag pricing">pricing</span><strong>ABF / substrates:</strong> Pricing stayed at 5. New Ibiden and AT&amp;S commentary pushed ASP expectations higher again, but both ABF rows were already maxed.</li>
-      <li><span class="tag pricing">pricing</span><strong>HBM:</strong> Pricing stayed at 5. HBM4E samples, export growth, and price-catch-up commentary all reinforced the thesis.</li>
-      <li><span class="tag pricing">pricing</span><strong>MLCC:</strong> Pricing stayed at 5. New checks pointed to 20-40% price pressure and AI-server lead times near 24 weeks.</li>
-      <li><span class="tag pricing">pricing</span><strong>Power semiconductors:</strong> Pricing stayed at 5. VRM and SPS pricing still looks up 10-20%+ even if HVDC timing shifts modestly.</li>
+      <li><span class="tag pricing">pricing</span><strong>EML:</strong> Pricing moved from 4 to 5. Supply is short, customers have few alternatives, and the expert said EML can sell at higher prices or receive price guarantees.</li>
+      <li><span class="tag pricing">pricing</span><strong>MLCC:</strong> Stayed at 5. The expert said embedded MLCC value is small versus the compute board, so even large price moves can be absorbed by Google or Nvidia.</li>
+      <li><span class="tag pricing">pricing</span><strong>AI-server PCB:</strong> Stayed at 3. Raw materials are rising, but Nvidia is pushing PCB suppliers to absorb CCL, copper, and E-glass costs.</li>
     </ul>
   </section>
 
   <section class="card">
     <h2>Bottleneck</h2>
     <ul>
-      <li><span class="tag bottleneck">bottleneck</span><strong>CoWoS:</strong> Bottleneck stayed at 5. TSMC still looks like the main near-term packaging choke point.</li>
-      <li><span class="tag bottleneck">bottleneck</span><strong>HBM:</strong> Bottleneck stayed at 5. Sample shipments improved visibility, but supply is still racing demand rather than catching up.</li>
-      <li><span class="tag bottleneck">bottleneck</span><strong>LPDDR5X / SOCAMM:</strong> Bottleneck stayed at 5. New checks still show Vera-class demand pulling directly on the mobile-memory supply base.</li>
-      <li><span class="tag bottleneck">bottleneck</span><strong>MLCC:</strong> Bottleneck stayed at 5. AI-server content and lead times remain consistent with a structurally tight passive stack.</li>
+      <li><span class="tag bottleneck">bottleneck</span><strong>HDI multilayer PCB:</strong> Bottleneck moved from 4 to 5. Nvidia-grade HDI/mSAP capacity is narrow, and new HDI capacity takes at least three quarters to add.</li>
+      <li><span class="tag bottleneck">bottleneck</span><strong>Backplane PCB:</strong> Bottleneck moved from 3 to 4. Rubin 56/78-layer orthogonal backplanes face warpage, signal-integrity, and yield issues.</li>
+      <li><span class="tag bottleneck">bottleneck</span><strong>CoWoS / HBM / ABF:</strong> Stayed tight. Google TPU and custom ASIC checks again showed these as gating resources, but the scores were already high.</li>
     </ul>
   </section>
 
   <section class="card">
     <h2>Moat</h2>
     <ul>
-      <li><span class="tag moat">moat</span><strong>ABF substrate:</strong> Moat stayed at 5. The latest ABF and EMIB-T notes still point to hard qualification and execution barriers around the current leaders.</li>
-      <li><span class="tag moat">moat</span><strong>CoWoS:</strong> Moat stayed at 5. EMIB-T broadened the advanced-packaging story, but it does not reduce TSMC's near-term strategic position.</li>
-      <li><span class="tag moat">moat</span><strong>HBM:</strong> Moat stayed at 4. Supplier concentration remains strong, but the row still covers multiple qualified memory makers.</li>
-      <li><span class="tag moat">moat</span><strong>Power semiconductors:</strong> Moat stayed at 4. SiC remains concentrated, but the broad row still includes wider GaN, MOSFET, and IGBT competition.</li>
+      <li><span class="tag moat">moat</span><strong>HDI multilayer PCB:</strong> Moat moved from 3 to 4. Fewer than ten listed Chinese PCB makers were described as having both HDI and mSAP process capability.</li>
+      <li><span class="tag moat">moat</span><strong>Backplane PCB:</strong> Moat moved from 3 to 4. Victory Giant is expected to keep about 70% share in core Rubin orthogonal backplanes because stability and qualification matter.</li>
+      <li><span class="tag moat">moat</span><strong>Silicon photonics:</strong> No score change. 1.6T silicon-photonics yield is difficult, but the evidence was module-level rather than a clean MZM component shortage.</li>
     </ul>
   </section>
 
@@ -114,7 +112,9 @@
       <table>
         <thead><tr><th>Component</th><th>Previous</th><th>New</th><th>Change</th><th>Simple reason</th></tr></thead>
         <tbody>
-          <tr><td>No existing component changed this week</td><td>2026-06-15 baseline</td><td>2026-06-19 refresh</td><td class="delta">0 / 0 / 0 / 0</td><td>The strongest rows were already carrying the tightness and pricing reflected by this week's evidence.</td></tr>
+          <tr><td>Electro-absorption Modulated Laser</td><td>5 / 4 / 5 / 14</td><td>5 / 5 / 5 / 15</td><td class="delta">0 / +1 / 0 / +1</td><td>Scarce EML now has explicit pricing support.</td></tr>
+          <tr><td>HDI Multilayer PCB (30+ Layers, Low-Loss)</td><td>4 / 3 / 3 / 10</td><td>5 / 3 / 4 / 12</td><td class="delta">+1 / 0 / +1 / +2</td><td>HDI/mSAP capacity is narrow and slow to add.</td></tr>
+          <tr><td>Backplane PCB</td><td>3 / 3 / 3 / 9</td><td>4 / 3 / 4 / 11</td><td class="delta">+1 / 0 / +1 / +2</td><td>Rubin backplane layer count creates yield and qualification barriers.</td></tr>
         </tbody>
       </table>
     </div>
@@ -124,23 +124,21 @@
   <section class="card">
     <h2>Important But No Score Change</h2>
     <ul>
-      <li><strong>ABF and AI package substrates:</strong> ASP and demand commentary strengthened again, but both ABF rows were already at 15.</li>
-      <li><strong>CoWoS:</strong> Still the main near-term packaging bottleneck, but the row already had max bottleneck and moat scores.</li>
-      <li><strong>HBM:</strong> Sample shipments and stronger pricing commentary reinforced scarcity, but HBM was already maxed on bottleneck and pricing.</li>
-      <li><strong>MLCC:</strong> Lead-time and pricing evidence improved, but bottleneck and pricing were already 5.</li>
-      <li><strong>Power semiconductors:</strong> Demand and pricing improved while HVDC timing slipped somewhat, but the broad row was already maxed on bottleneck and pricing.</li>
-      <li><strong>LPDDR5X / SOCAMM:</strong> Demand stayed strong, but Bernstein's view that SOCAMM2 remains niche kept the moat score unchanged.</li>
+      <li><strong>ABF:</strong> Google TPU COT checks still point to multi-year ABF scarcity, but ABF was already 15.</li>
+      <li><strong>CoWoS:</strong> Quota remains a gating resource, but bottleneck and moat were already maxed.</li>
+      <li><strong>HBM:</strong> HBM4E cost inflation supports pricing, but pricing and bottleneck were already 5.</li>
+      <li><strong>MLCC:</strong> 5x capacitance density migration and price absorption strengthen the thesis, but bottleneck and pricing were already 5.</li>
+      <li><strong>Power semiconductors / 800V:</strong> Demand evidence improved, but the broad row stays below max moat because competition remains wider outside SiC/GaN niches.</li>
     </ul>
   </section>
 
   <section class="card">
     <h2>Watchlist</h2>
     <ul>
-      <li><strong>EMIB-T and other non-CoWoS package paths:</strong> Important enough to monitor, but not represented as a separate row.</li>
-      <li><strong>PCIe retimers, PCIe switches, RCD and MRCD chips:</strong> Still relevant, and new SOCAMM2 notes did not justify removing them from watchlist.</li>
-      <li><strong>BMC chips:</strong> Aspeed and server-control-chip evidence still maps to architecture, but no BMC row exists today.</li>
-      <li><strong>800V HVDC equipment:</strong> SST, SSCB, BBU/CBU, and power-shelf components still need dedicated rows if they become core constraints.</li>
-      <li><strong>Advanced-packaging wet tools and AI test cells:</strong> Still important, but not yet directly represented in the table.</li>
+      <li><strong>SiTime / timing chips:</strong> Higher timing content and sticky clock-tree design wins, but no dedicated timing-chip row exists.</li>
+      <li><strong>Custom ASIC and CPU alternatives:</strong> Qualcomm Oryon, Google TPU, AWS silicon, and MediaTek matter for architecture, but not as component bottleneck rows.</li>
+      <li><strong>PCB substitution:</strong> Thin-film ceramic circuits, glass substrates, ceramic substrates, all-optical networks, and CPO could reduce PCB intensity after the Rubin wave.</li>
+      <li><strong>800V HVDC equipment:</strong> SST, SSCB, BBU/CBU, and power-shelf architecture still need dedicated rows if evidence becomes component-level.</li>
     </ul>
   </section>
 </main>
