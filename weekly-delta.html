@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Weekly Data Center Scorecard Delta - 2026-07-13</title>
+<title>Weekly Data Center Scorecard Delta - 2026-07-19</title>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta name="robots" content="noindex"/>
 <style>
@@ -47,60 +47,60 @@
 <body>
 <main class="wrap">
   <h1>Weekly Incremental Change</h1>
-  <div class="sub">2026-07-13 refresh versus 2026-07-05 baseline</div>
+  <div class="sub">2026-07-19 refresh versus 2026-07-13 baseline</div>
 
   <section class="card">
     <h2>One Page Summary</h2>
     <ul>
-      <li>This refresh covers the latest completed Singapore-time week, July 6-12: 11 local sell-side summary files and one validated Third Bridge package containing 66 transcripts and 10 topics. The package had no duplicate or failed transcripts.</li>
-      <li>Three existing rows changed: high-frequency copper foil became tighter and gained pricing power; CPO modules became more supply-constrained and harder to replicate; high-end MLCC moved to a maximum moat score.</li>
-      <li>HBM/DRAM, ABF, CoWoS, EML/InP lasers, low-loss PCB material, and 800V power remained strong, but their existing scores already captured the evidence or the new data did not support a clean axis change.</li>
-      <li>Important evidence without a clean table row is shown in the watchlist: CPO test equipment, liquid-cooling hardware, utility/grid delays, 800V sidecars, AEC/NPO/interconnect chips, and CoWoP/TGV process migration.</li>
+      <li>This refresh covers the Singapore-time week of July 13-19: 10 local sell-side summary files and one validated Third Bridge package containing 34 transcripts and 6 topics. The package recorded 2 source duplicates and 0 failed transcripts.</li>
+      <li>Two existing rows changed: HDI PCB gained pricing power because material inflation is now being passed through, and glass-core package substrate gained a moat point because production requires a difficult integrated process and long qualification.</li>
+      <li>MLCC, HBM, CoWoS, low-loss PCB material, optics, and 800V power remained strong, but their existing scores already captured the evidence or the new data did not support another axis change.</li>
+      <li>Important evidence without a clean table row is shown in the watchlist: MLCC production inputs, AEC/NPO chips, thick-glass TGV equipment, SiC substrates and packaging, grid/bridge power, and bundled custom-ASIC capacity.</li>
     </ul>
   </section>
 
   <section class="grid">
     <div class="metric">
-      <b>2</b>
+      <b>0</b>
       Bottleneck upgrades
-      <div class="small">Copper foil and CPO module</div>
+      <div class="small">Current tightness was already scored</div>
     </div>
     <div class="metric">
       <b>1</b>
       Pricing upgrade
-      <div class="small">High-frequency copper foil</div>
+      <div class="small">HDI multilayer PCB</div>
     </div>
     <div class="metric">
-      <b>2</b>
+      <b>1</b>
       Moat upgrades
-      <div class="small">MLCC and CPO module</div>
+      <div class="small">Glass core package substrate</div>
     </div>
   </section>
 
   <section class="card">
     <h2>Pricing Power</h2>
     <ul>
-      <li><span class="tag pricing">pricing</span><strong>High-frequency copper foil: 4 → 5.</strong> 1.6T optical modules use carrier copper in 14 of 16 layers. Supply is expected to stay short through late 2027, while newer HVLP generations rise from roughly RMB 200k per tonne toward RMB 250k and potentially RMB 350k.</li>
-      <li><span class="tag pricing">pricing</span><strong>MLCC stayed at 5.</strong> High-capacitance spot prices and AI mix rose sharply, but pricing was already at the maximum score.</li>
-      <li><span class="tag pricing">pricing</span><strong>Broad pluggable transceivers stayed at 4.</strong> 800G and 1.6T demand exceeds supply, but same-generation module prices still fall and multi-sourcing limits broad supplier pricing power.</li>
+      <li><span class="tag pricing">pricing</span><strong>HDI multilayer PCB: 3 → 4.</strong> GB300 suppliers are passing through roughly 10% material inflation after a one-to-two-quarter lag. Another expert described a USD2-2.5 increase on a USD5 board, with material costs still absorbing part of the gain.</li>
+      <li><span class="tag pricing">pricing</span><strong>MLCC stayed at 5.</strong> The latest checks put the high-capacitance gap near 20% and described another 20-30% price increase opportunity, but pricing was already at the maximum score.</li>
+      <li><span class="tag pricing">pricing</span><strong>CoWoS and broad optics stayed at 4.</strong> Capacity and demand remain strong, but the evidence did not show a new component-specific price move that clears the scoring rule.</li>
     </ul>
   </section>
 
   <section class="card">
     <h2>Bottleneck</h2>
     <ul>
-      <li><span class="tag bottleneck">bottleneck</span><strong>High-frequency copper foil: 4 → 5.</strong> Higher-speed optics add much more premium carrier copper, and the latest checks show a shortage lasting through Q4 2027.</li>
-      <li><span class="tag bottleneck">bottleneck</span><strong>CPO module: 4 → 5.</strong> Systems are already shipping, but first-generation optical test tools process only about two wafers per day. The market needs hundreds of tools by Q1 2027, up from dozens in H1 2026.</li>
-      <li><span class="tag bottleneck">bottleneck</span><strong>ABF and CoWoS stayed at 5.</strong> New evidence showed ABF demand near three times prior demand, low initial yields, and a roughly 20% CoWoS supply gap, but both rows were already at the ceiling.</li>
+      <li><span class="tag bottleneck">bottleneck</span><strong>No bottleneck score changed.</strong> The new evidence confirmed tight supply, but affected components were already at 5 or the constraint is not yet in volume production.</li>
+      <li><span class="tag bottleneck">bottleneck</span><strong>HDI PCB stayed at 5.</strong> Nvidia-qualified capacity remains narrow in 2026, though broader industry additions from H1 2027 could start to ease allocation.</li>
+      <li><span class="tag bottleneck">bottleneck</span><strong>Glass core stayed at 3.</strong> TGV and plating tools take more than a year, but mass production is still expected only in late 2027 or 2028.</li>
     </ul>
   </section>
 
   <section class="card">
     <h2>Moat</h2>
     <ul>
-      <li><span class="tag moat">moat</span><strong>Multilayer ceramic capacitor: 4 → 5.</strong> Nvidia-grade parts require sub-1μm sheets, more than 1,200 stacked layers, ultra-pure powder, specialized Japanese equipment, and difficult yields. Three suppliers control about 90% of high-capacitance supply.</li>
-      <li><span class="tag moat">moat</span><strong>CPO module: 4 → 5.</strong> Fiber placement needs at least 0.1μm accuracy—about 100 times tighter than conventional CMOS handling—plus dual-sided testing and new OSAT production skills.</li>
-      <li><span class="tag moat">moat</span><strong>Power semiconductors stayed at 4.</strong> 800V raises SiC/GaN content, but falling SiC wafer prices and several competing device paths prevent a broad maximum moat score.</li>
+      <li><span class="tag moat">moat</span><strong>Glass core package substrate: 3 → 4.</strong> Thick glass needs fine TGV drilling, void-free plating, 2x2-5x5μm patterning, 100% inspection, and months of assembly and reliability testing.</li>
+      <li><span class="tag moat">moat</span><strong>HDI PCB stayed at 4.</strong> Qualification and plant-specific yield know-how remain important, but top-ten capacity growth and likely 2027 price competition stop a move to 5.</li>
+      <li><span class="tag moat">moat</span><strong>Power semiconductors stayed at 4.</strong> Qualified SiC has a real reliability barrier, but the broad row still includes more competitive IGBT, MOSFET, and GaN paths.</li>
     </ul>
   </section>
 
@@ -110,9 +110,8 @@
       <table>
         <thead><tr><th>Component</th><th>Previous</th><th>New</th><th>Change</th><th>Simple reason</th></tr></thead>
         <tbody>
-          <tr><td>Multilayer Ceramic Capacitor</td><td>5 / 5 / 4 / 14</td><td>5 / 5 / 5 / 15</td><td class="delta">0 / 0 / +1 / +1</td><td>Manufacturing and qualification barriers now justify a maximum moat score.</td></tr>
-          <tr><td>High-Frequency Copper Foil (RTF)</td><td>4 / 4 / 4 / 12</td><td>5 / 5 / 4 / 14</td><td class="delta">+1 / +1 / 0 / +2</td><td>1.6T demand, limited premium supply, and rising HVLP prices crossed two thresholds.</td></tr>
-          <tr><td>Co-Packaged Optics Module</td><td>4 / 3 / 4 / 11</td><td>5 / 3 / 5 / 13</td><td class="delta">+1 / 0 / +1 / +2</td><td>Alignment, testing, and equipment throughput now gate volume production.</td></tr>
+          <tr><td>HDI Multilayer PCB (30+ Layers, Low-Loss)</td><td>5 / 3 / 4 / 12</td><td>5 / 4 / 4 / 13</td><td class="delta">0 / +1 / 0 / +1</td><td>Actual material pass-through replaces the prior evidence that PCB makers had to absorb input inflation.</td></tr>
+          <tr><td>Glass Core Package Substrate</td><td>3 / 3 / 3 / 9</td><td>3 / 3 / 4 / 10</td><td class="delta">0 / 0 / +1 / +1</td><td>Integrated TGV, plating, patterning, yield, and qualification requirements create a defensible process barrier.</td></tr>
         </tbody>
       </table>
     </div>
@@ -122,23 +121,23 @@
   <section class="card">
     <h2>Important But No Score Change</h2>
     <ul>
-      <li><strong>HBM / DRAM:</strong> Contract pricing and allocation stayed strong, but bottleneck and pricing were already at 5.</li>
-      <li><strong>ABF / CoWoS:</strong> Yield loss, limited advanced capacity, and larger packages reinforced the current ceiling bottleneck scores.</li>
-      <li><strong>EML / InP:</strong> Laser supply remains tight for one to two years, but the EML row was already 5 / 5 / 5.</li>
-      <li><strong>800V power:</strong> Content per rack rises sharply, while safety standards, dual-source qualification, and new sidecar/SST designs delay the ramp.</li>
-      <li><strong>Liquid cooling:</strong> Cold plates, CDUs, sensors, pumps, and valves are growing quickly, but evidence is spread across sockets and does not map cleanly to one row.</li>
+      <li><strong>MLCC:</strong> High-capacitance supply is about 20% short, and Japanese equipment takes 12-16 months, but the row was already 5 / 5 / 5.</li>
+      <li><strong>HBM / CoWoS:</strong> Supplier ASPs, capacity reservations, and higher TSMC capex reinforced existing ceiling or near-ceiling scores.</li>
+      <li><strong>Low-loss laminate:</strong> GB300 material inflation is being passed through, but this row was already 5 / 5 / 4.</li>
+      <li><strong>Optics / AEC:</strong> Lumentum capacity is full beyond 2028, while second-source DSPs could halve AEC prices; the mixed evidence did not justify a broad score change.</li>
+      <li><strong>800V power:</strong> SiC earns a reliability premium, but Rohm showed no broad price increase and multiple device paths keep the broad moat below 5.</li>
     </ul>
   </section>
 
   <section class="card">
     <h2>Watchlist</h2>
     <ul>
-      <li><strong>CPO production equipment:</strong> Dual-sided testers, 0.1μm alignment stages, die handling, and OSAT throughput.</li>
-      <li><strong>Liquid-cooling hardware:</strong> Cold plates, manifolds, quick connectors, and qualified rack-level sensors, pumps, and valves.</li>
-      <li><strong>Grid and large power equipment:</strong> Utility connections above three years, transformers above 10MVA beyond one year, and MV switchgear prices up 7-8% QoQ.</li>
-      <li><strong>800V rack chain:</strong> Sidecars, solid-state transformers, safety standards, busbars, and rack power shelves.</li>
-      <li><strong>AEC / NPO / interconnect chips:</strong> Credo AEC pricing, NPO serviceability, PCIe/CXL retimers, and custom SerDes IP.</li>
-      <li><strong>CoWoP / TGV migration:</strong> Value may move from ABF into mSAP PCB, TGV drilling/fill, and OSAT lines from 2027 onward.</li>
+      <li><strong>MLCC production inputs:</strong> Sub-120nm nickel/ceramic powder, rare-earth oxides, tape-casting tools, and lamination equipment.</li>
+      <li><strong>AEC / NPO / interconnect chips:</strong> Credo AEC, second-source DSPs, PCIe/CXL retimers, and custom SerDes IP.</li>
+      <li><strong>Thick-glass TGV equipment:</strong> Glass-specific drilling, plating, fine patterning, and 100% inspection.</li>
+      <li><strong>SiC substrate and module packaging:</strong> Boule yield, 200mm conversion, double-sided cooling, and high-voltage qualification.</li>
+      <li><strong>Grid and bridge power:</strong> Utility, gas interconnect, substations, and switchgear still take 12-24 months or more.</li>
+      <li><strong>Custom-ASIC reserved capacity:</strong> Broadcom, HBM, foundry, packaging, SerDes, ODM, and optics reservations create a bundled bottleneck.</li>
     </ul>
   </section>
 </main>
