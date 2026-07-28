@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Weekly Data Center Scorecard Delta - 2026-07-27</title>
+<title>Weekly Data Center Scorecard Delta - 2026-07-28</title>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta name="robots" content="noindex"/>
 <style>
@@ -47,15 +47,16 @@
 <body>
 <main class="wrap">
   <h1>Weekly Incremental Change</h1>
-  <div class="sub">2026-07-27 refresh versus 2026-07-26 baseline</div>
+  <div class="sub">2026-07-28 refresh versus 2026-07-27 baseline</div>
 
   <section class="card">
     <h2>One Page Summary</h2>
     <ul>
-      <li>This refresh covers the Singapore-time week of July 27-August 2 through the July 27 run date.</li>
-      <li>There were no local sell-side summary files and no Third Bridge package inside the window, so no component had a new evidence trigger.</li>
-      <li>No bottleneck, pricing-power, or moat score changed. The July 26 scores remain the current baseline.</li>
-      <li>The Third Bridge refresh gate was satisfied separately by the validated July 18 package with 34 transcripts and 6 topics.</li>
+      <li>This refresh covers the Singapore-time week beginning July 27 through the July 28 run date.</li>
+      <li>Three local sell-side summary files were reviewed. There was no in-window Third Bridge package; repeated coverage of the same memory partnerships was treated as one evidence cluster.</li>
+      <li>HBM moat rose from 4 to 5 because new multi-year agreements add direct customer and capacity lock-in. Bottleneck and pricing stayed at 5, so total rose from 14 to 15.</li>
+      <li>MLCC, CoWoS, and LPDDR5X evidence was refreshed without a score change. Enterprise SSD/KV-cache storage and optical photodetectors were added to the watchlist.</li>
+      <li>The Third Bridge refresh gate was satisfied separately by the validated July 18 package with 34 transcripts, a completed HTML report, and validation/audit artifacts.</li>
       <li>No live Outlook, Gmail, web, browser, or GitHub source research was used.</li>
     </ul>
   </section>
@@ -64,38 +65,38 @@
     <div class="metric">
       <b>0</b>
       Bottleneck upgrades
-      <div class="small">No new constraint evidence</div>
+      <div class="small">HBM was already 5</div>
     </div>
     <div class="metric">
       <b>0</b>
       Pricing upgrades
-      <div class="small">No new ASP evidence</div>
+      <div class="small">HBM and MLCC were already 5</div>
     </div>
     <div class="metric">
-      <b>0</b>
+      <b>1</b>
       Moat upgrades
-      <div class="small">No new qualification evidence</div>
+      <div class="small">HBM capacity lock-in</div>
     </div>
   </section>
 
   <section class="card">
     <h2>Pricing Power</h2>
     <ul>
-      <li><span class="tag pricing">pricing</span><strong>No pricing-power score changed.</strong> No in-window local source provided new ASP, price-hike, pass-through, or mix evidence.</li>
+      <li><span class="tag pricing">pricing</span><strong>No pricing-power score changed.</strong> HBM contract visibility, LPDDR5(X) price expectations, MLCC inventory/price data, and CoWoS mix confirmed rows already at their current pricing scores.</li>
     </ul>
   </section>
 
   <section class="card">
     <h2>Bottleneck</h2>
     <ul>
-      <li><span class="tag bottleneck">bottleneck</span><strong>No bottleneck score changed.</strong> No in-window local source provided new supply, lead-time, allocation, capacity, or easing evidence.</li>
+      <li><span class="tag bottleneck">bottleneck</span><strong>No bottleneck score changed.</strong> HBM, MLCC, and CoWoS demand stayed tight, but each component was already scored 5.</li>
     </ul>
   </section>
 
   <section class="card">
     <h2>Moat</h2>
     <ul>
-      <li><span class="tag moat">moat</span><strong>No moat score changed.</strong> No in-window local source provided new qualification, sole-source, capacity-lock, ecosystem, or process evidence.</li>
+      <li><span class="tag moat">moat</span><strong>HBM moat rose 4→5.</strong> Multi-year HBM and memory agreements add direct customer and capacity lock-in to a market with only three scaled suppliers.</li>
     </ul>
   </section>
 
@@ -105,7 +106,7 @@
       <table>
         <thead><tr><th>Component</th><th>Previous</th><th>New</th><th>Change</th><th>Simple reason</th></tr></thead>
         <tbody>
-          <tr><td>No scored component changed</td><td>—</td><td>—</td><td class="delta">0 / 0 / 0 / 0</td><td>No in-window local source was available to support a score change.</td></tr>
+          <tr><td>High Bandwidth Memory (HBM)</td><td>5 / 5 / 4 / 14</td><td>5 / 5 / 5 / 15</td><td class="delta">0 / 0 / +1 / +1</td><td>Multi-year customer agreements now provide direct capacity-lock evidence.</td></tr>
         </tbody>
       </table>
     </div>
@@ -115,14 +116,17 @@
   <section class="card">
     <h2>Important But No Score Change</h2>
     <ul>
-      <li><strong>None:</strong> There was no in-window evidence to refresh against an existing component.</li>
+      <li><strong>MLCC:</strong> Distributor inventory units fell 22% in four weeks while the price index rose 4%. High-capacitance mix and selective Asian price increases confirm 5/5/5.</li>
+      <li><strong>CoWoS:</strong> Amkor's 2.5D ramp improved mix and margins, and DISCO checks kept demand firm. The row remains 5/5/5.</li>
+      <li><strong>LPDDR5X / SOCAMM:</strong> Expected third-quarter LPDDR5(X) pricing of +8-13% confirms pricing 5, but adds no new moat evidence.</li>
     </ul>
   </section>
 
   <section class="card">
     <h2>Watchlist</h2>
     <ul>
-      <li><strong>No new watchlist item:</strong> No in-window local evidence introduced a concept outside the existing scorecard table.</li>
+      <li><strong>Enterprise SSD / KV-cache offload:</strong> Kioxia expects enterprise SSD ASP to outpace NAND, has secured up to half of capacity under LTAs, and expects an XL-Flash qualification result for an Nvidia storage rack in September.</li>
+      <li><strong>Optical photodetector chips:</strong> WIN Semiconductor pulled forward mass production as data-center optical demand lifted utilization to 65%; the scorecard has no standalone photodetector row.</li>
     </ul>
   </section>
 </main>
