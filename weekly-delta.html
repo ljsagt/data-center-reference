@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Weekly Data Center Scorecard Delta - 2026-08-02</title>
+<title>Weekly Data Center Scorecard Delta - 2026-08-03</title>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta name="robots" content="noindex"/>
 <style>
@@ -47,57 +47,58 @@
 <body>
 <main class="wrap">
   <h1>Weekly Incremental Change</h1>
-  <div class="sub">2026-08-02 refresh versus 2026-08-01 baseline</div>
+  <div class="sub">2026-08-03 refresh versus 2026-08-02 baseline</div>
 
   <section class="card">
     <h2>One Page Summary</h2>
     <ul>
-      <li>This refresh covers the Singapore-time week beginning July 27 through the August 2 run date.</li>
-      <li>Thirteen local sell-side summary files containing 781 email cards and one validated Third Bridge package containing 66 transcripts were reviewed. The Third Bridge package was the only source added after the August 1 baseline.</li>
-      <li>Backplane PCB, CDU plate heat exchangers, and CDU circulating pumps each increased one point on bottleneck.</li>
-      <li>No pricing-power or moat score changed. New evidence reinforced HBM, high-end PCB, low-loss laminate, EML, and power-semiconductor rows.</li>
-      <li>Two-phase liquid cooling, high-end drill bits, PPO resin, HBF storage, CPO manufacturing, 800V solid-state breakers, and neocloud project execution remain on the watchlist.</li>
+      <li>This refresh covers the current partial Singapore-time week beginning August 3 through the August 3 run time.</li>
+      <li>Two newly generated local sell-side summary files containing 51 email cards were reviewed. Repeated coverage of the same company event was counted as one evidence cluster.</li>
+      <li>No bottleneck, pricing-power, or moat score changed versus the August 2 baseline.</li>
+      <li>New evidence reinforced MLCC, ABF package substrates, low-loss laminate, power semiconductors, and HBM.</li>
+      <li>NAND and enterprise storage, server CPU and custom ASIC capacity, HVDC power racks, and orbital data centers were added to the visible watchlist because the scorecard has no directly matching row or the evidence was system-level.</li>
       <li>The Third Bridge gate was satisfied by the August 1 report, passing validation and quality audit, and 66 non-empty API transcript JSONs.</li>
+      <li>No new Third Bridge package appeared after the August 2 baseline, and no <code>/tmp/thirdbridge_clean_*</code> directory was present.</li>
       <li>No live Outlook, Gmail, web, browser, or GitHub source research was used.</li>
     </ul>
   </section>
 
   <section class="grid">
     <div class="metric">
-      <b>3</b>
-      Bottleneck upgrades
-      <div class="small">Backplane PCB and two CDU components moved up</div>
+      <b>0</b>
+      Bottleneck changes
+      <div class="small">New evidence confirmed rows already at 5</div>
     </div>
     <div class="metric">
       <b>0</b>
-      Pricing upgrades
-      <div class="small">New price evidence confirmed rows already at 5</div>
+      Pricing changes
+      <div class="small">Price evidence did not create a new regime</div>
     </div>
     <div class="metric">
       <b>0</b>
-      Moat upgrades
-      <div class="small">Qualification evidence did not narrow supplier sets</div>
+      Moat changes
+      <div class="small">No evidence narrowed a qualified supplier set</div>
     </div>
   </section>
 
   <section class="card">
     <h2>Pricing Power</h2>
     <ul>
-      <li><span class="tag pricing">pricing</span><strong>No pricing-power score changed.</strong> Resonac described a 30% CCL price increase and optical checks said EML prices are rising, but those rows were already scored 5. The new liquid-cooling evidence mentioned price negotiation, not an actual price increase.</li>
+      <li><span class="tag pricing">pricing</span><strong>No pricing-power score changed.</strong> Murata's price-pass-through discussion, Kinsus margin improvement, Shengyi's CCL price resets, and Renesas selective increases confirmed rows already scored 5.</li>
     </ul>
   </section>
 
   <section class="card">
     <h2>Bottleneck</h2>
     <ul>
-      <li><span class="tag bottleneck">bottleneck</span><strong>Three rows increased.</strong> Backplane PCB moved from 4 to 5 because full-system validation can take one-to-two years and current sample yields are only 10-20%. Plate heat exchangers and circulating pumps each moved from 3 to 4 because long lead times now meet a large, named 2027 CDU plan.</li>
+      <li><span class="tag bottleneck">bottleneck</span><strong>No bottleneck score changed.</strong> MLCC backlog, ABF and BT substrate supply, AI memory commitments, and digital-power demand all remained strong, but every directly supported row was already at its justified bottleneck level.</li>
     </ul>
   </section>
 
   <section class="card">
     <h2>Moat</h2>
     <ul>
-      <li><span class="tag moat">moat</span><strong>No moat score changed.</strong> Orthogonal backplane qualification is difficult, but several suppliers and material designs are still being tested. Resonac's position is strong in AI CCL, but the broader laminate row still has competing next-generation materials.</li>
+      <li><span class="tag moat">moat</span><strong>No moat score changed.</strong> Large memory commitments reinforced HBM lock-in, but that row was already at 5. New CCL capacity and broad power-semiconductor competition kept laminate and power-semiconductor moat at 4.</li>
     </ul>
   </section>
 
@@ -107,9 +108,7 @@
       <table>
         <thead><tr><th>Component</th><th>Previous</th><th>New</th><th>Change</th><th>Simple reason</th></tr></thead>
         <tbody>
-          <tr><td>Backplane PCB</td><td>4 / 3 / 4 / 11</td><td>5 / 3 / 4 / 12</td><td>+1 / 0 / 0 / +1</td><td>Current sample yields of only 10-20% and long full-system qualification make the 2027 ramp a hard supply constraint.</td></tr>
-          <tr><td>Plate-and-Frame Heat Exchanger</td><td>3 / 3 / 3 / 9</td><td>4 / 3 / 3 / 10</td><td>+1 / 0 / 0 / +1</td><td>Potential demand above 100,000 units meets long lead times and limited qualified capacity.</td></tr>
-          <tr><td>Secondary-Side Circulating Pumps</td><td>3 / 3 / 3 / 9</td><td>4 / 3 / 3 / 10</td><td>+1 / 0 / 0 / +1</td><td>Long pump lead times can delay otherwise complete CDU shipments.</td></tr>
+          <tr><td colspan="5"><strong>No score changes versus 2026-08-02.</strong> Evidence refreshes are listed below.</td></tr>
         </tbody>
       </table>
     </div>
@@ -119,11 +118,11 @@
   <section class="card">
     <h2>Important But No Score Change</h2>
     <ul>
-      <li><strong>HBM:</strong> New capacity still takes two-to-five years and multi-year contracts support demand. The row remains 5/5/5.</li>
-      <li><strong>HDI PCB:</strong> Fine-line mSAP capacity could remain about 30% short in 2027. The row remains 5/4/4 because there was no fresh price reset or smaller qualified supplier set.</li>
-      <li><strong>Low-loss laminate:</strong> Resonac described a 30% CCL price increase, long qualification, and operator-limited supply. The broad row remains 5/5/4 because next-generation material competition is still open.</li>
-      <li><strong>EML:</strong> EML remains tighter than DSP supply and prices are rising. The row remains 5/5/5.</li>
-      <li><strong>Power semiconductors:</strong> A 1 MW rack can add about 700 SiC devices and most current designs point to 800V. The row remains 5/5/4 because the broad supplier and technology set is still wide.</li>
+      <li><strong>MLCC:</strong> Orders rose 26% sequentially, backlog rose 49%, and book-to-bill stayed at 1.47. The row remains 5/5/5.</li>
+      <li><strong>ABF package substrate:</strong> Kinsus reported better ABF/BT margin and expects more than 50% Vera CPU share. The row remains 5/5/5.</li>
+      <li><strong>Low-loss laminate:</strong> Shengyi is improving AI CCL mix and pricing while adding capacity. The broad row remains 5/5/4 because competition is still open.</li>
+      <li><strong>Power semiconductors:</strong> Renesas reported stronger AI digital-power demand and selective price increases. The row remains 5/5/4 because the supplier and technology set is still wide.</li>
+      <li><strong>HBM:</strong> Large, long-dated AI memory commitments reinforce demand and capacity lock-in. The row remains 5/5/5.</li>
     </ul>
   </section>
 
@@ -133,10 +132,13 @@
       <li><strong>Two-phase liquid cooling:</strong> 200 kW-class racks increase the need, but greenfield economics, OEM warranties, and single-phase competition keep adoption at pilot scale.</li>
       <li><strong>High-end PCB drill bits:</strong> Rubin can use four bits per board, early yield is below 70%, and grinding-equipment lead time is about one year.</li>
       <li><strong>Electronic-grade PPO resin:</strong> M8 demand is firm, but SA9000 supply is already ample and new capacity can pressure price.</li>
-      <li><strong>HBF and enterprise storage tiers:</strong> HBF can add much more model-weight capacity, but qualification and software push broad adoption toward 2030.</li>
+      <li><strong>NAND, HBF, and enterprise storage:</strong> Kioxia NAND ASP rose about 70% sequentially, but planned investment could ease supply from 2027; HBF adoption still depends on qualification and software.</li>
       <li><strong>CPO manufacturing:</strong> High channel counts, FAU alignment, and wafer-level optical testing remain difficult.</li>
       <li><strong>800V solid-state circuit breakers:</strong> Fast fault isolation and long qualification support 2027 adoption, but there is no architecture-specific scored row.</li>
       <li><strong>Neocloud deployment execution:</strong> Power, liquid cooling, rack, and data-center space are replacing GPU supply as the installation constraint.</li>
+      <li><strong>Server CPU and custom ASIC capacity:</strong> Reports cited CPU shortages and a much larger 2027-28 ASIC ramp, but the table has no scored CPU or ASIC die row.</li>
+      <li><strong>HVDC power racks:</strong> Lite-On and Delta plan initial fourth-quarter production and raised capital spending, but the evidence does not isolate a new component bottleneck.</li>
+      <li><strong>Orbital data centers:</strong> The local note is a teaser about future cooling content, with no quantified supply, pricing, or qualification evidence yet.</li>
     </ul>
   </section>
 </main>
