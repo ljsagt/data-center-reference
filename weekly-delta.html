@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Weekly Data Center Scorecard Delta - 2026-08-09</title>
+<title>Weekly Data Center Scorecard Delta - 2026-08-16</title>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta name="robots" content="noindex"/>
 <style>
@@ -48,18 +48,18 @@
 <body>
 <main class="wrap">
   <h1>Weekly Incremental Change</h1>
-  <div class="sub">2026-08-09 refresh versus 2026-08-03 baseline · Singapore-time week of August 3–9</div>
+  <div class="sub">2026-08-16 refresh versus 2026-08-09 baseline · Singapore-time week of August 10–16</div>
 
   <section class="card">
     <h2>One Page Summary</h2>
     <ul>
-      <li><strong>Three component scores changed.</strong> DFB-laser bottleneck rose, glass-core substrate bottleneck fell, and power-capacitor pricing power rose.</li>
-      <li>DFB lasers moved to 5/4/4 because tight InP supply is now confirmed by an upstream supplier's capacity and pricing outlook and by record laser-vendor bookings.</li>
-      <li>Glass-core substrates moved to 2/3/4 because near-term volume demand was pushed toward about 2030; the difficult process still supports moat 4.</li>
-      <li>Film, electrolytic, and ceramic power capacitors moved to 3/4/3 after selected price revisions were implemented alongside expanding AI-server demand.</li>
-      <li>ABF substrates, MLCC, low-loss PCB materials, power semiconductors, HBM, and EML received strong new confirmation but did not move.</li>
-      <li>Research used 18 local sell-side HTML files. Four were empty; the other 14 contained 792 cards and 599 unique messages after exact-link deduplication. Of those, 548 were new after the August 3 baseline.</li>
-      <li>No new Third Bridge package appeared after the baseline. The August 1 package was revalidated: 66 transcripts, 66 report cards, and passing HTML and content-quality audits. No <code>/tmp/thirdbridge_clean_*</code> directory was present.</li>
+      <li><strong>Three component scores changed.</strong> Power capacitors tightened, CDU-pump moat improved, and glass-core substrate scarcity fell again.</li>
+      <li>Film, electrolytic, and ceramic power capacitors moved to 4/4/3 because Yageo is above 90% utilization with a 2.2 book-to-bill, while passive-component lead times and prices rose again.</li>
+      <li>Secondary-side CDU circulating pumps moved to 4/3/4 because continuous-duty reliability, more than six months of qualification, and a short white list make suppliers harder to replace.</li>
+      <li>Glass-core package substrates moved to 1/3/4 after another customer reliability failure and postponed investment pushed credible volume adoption to 2029–30 or later.</li>
+      <li>No pricing-power score changed. ABF substrates, EML, low-loss PCB materials, power semiconductors, HBM, and external CPO lasers received important new evidence but stayed put.</li>
+      <li>Research used 12 local sell-side HTML files with 499 cards. Link deduplication plus five text-keyed no-link cards left 457 unique messages; 450 were dated inside August 10–16 after seven August 9 messages were excluded.</li>
+      <li>The validated August 15 Third Bridge package added 37 non-empty transcripts and 37 report cards, with passing HTML and content-quality audits and no failed transcripts. No <code>/tmp/thirdbridge_clean_*</code> directory was present.</li>
       <li>No live Outlook, Gmail, web, browser, or GitHub source research was used.</li>
     </ul>
   </section>
@@ -71,36 +71,36 @@
       <div class="small">One tighter and one easier</div>
     </div>
     <div class="metric">
-      <b>1</b>
+      <b>0</b>
       Pricing change
-      <div class="small">Implemented capacitor price revisions</div>
+      <div class="small">Stronger evidence, no axis move</div>
     </div>
     <div class="metric">
-      <b>0</b>
+      <b>1</b>
       Moat changes
-      <div class="small">No supplier set narrowed or widened enough</div>
+      <div class="small">CDU-pump qualification barrier</div>
     </div>
   </section>
 
   <section class="card">
     <h2>Bottleneck</h2>
     <ul>
-      <li><span class="tag bottleneck">tighter</span><strong>Distributed Feedback Laser: 4 → 5.</strong> JX plans 7–10x InP capacity by 2030 and sees room for large price resets under tight supply; MACOM's record bookings and 1.6 book-to-bill confirm demand at the laser-vendor level.</li>
-      <li><span class="tag bottleneck">easier</span><strong>Glass Core Package Substrate: 3 → 2.</strong> Nitto Boseki expects organic packages to remain mainstream until about 2030, making near-term volume scarcity less immediate.</li>
+      <li><span class="tag bottleneck">tighter</span><strong>Capacitors (Film, Electrolytic, Ceramic): 3 → 4.</strong> Yageo's utilization is above 90%, book-to-bill is 2.2, and passive-component lead times kept rising.</li>
+      <li><span class="tag bottleneck">easier</span><strong>Glass Core Package Substrate: 2 → 1.</strong> Another supplier failed customer reliability qualification and postponed investment; volume adoption now looks like a 2029–30-or-later issue.</li>
     </ul>
   </section>
 
   <section class="card">
     <h2>Pricing Power</h2>
     <ul>
-      <li><span class="tag pricing">pricing</span><strong>Capacitors (Film, Electrolytic, Ceramic): 3 → 4.</strong> Nichicon implemented selected price revisions while large AI-server capacitor demand continued to expand. Demand remained around plan, so bottleneck stayed at 3.</li>
+      <li><span class="tag pricing">pricing</span><strong>No pricing score changed.</strong> Capacitor pass-through, passive-component price increases, CCL pass-through, EML shortages, HBM pricing, and power-semiconductor increases all strengthened existing scores without crossing another scoring threshold.</li>
     </ul>
   </section>
 
   <section class="card">
     <h2>Moat</h2>
     <ul>
-      <li><span class="tag moat">moat</span><strong>No moat score changed.</strong> Glass-core manufacturing remains difficult despite delayed volume demand. DFB supply is tighter, but the evidence did not narrow the qualified laser set enough to lift moat. Broad capacitor competition keeps moat at 3.</li>
+      <li><span class="tag moat">moat</span><strong>Secondary-Side Circulating Pumps: 3 → 4.</strong> CDU pumps must run around the clock, pass more than six months of testing and white-list approval, and currently come from only five or six practical suppliers.</li>
     </ul>
   </section>
 
@@ -110,9 +110,9 @@
       <table>
         <thead><tr><th>Component</th><th>Previous</th><th>New</th><th>Change</th><th>Simple reason</th></tr></thead>
         <tbody>
-          <tr><td>Distributed Feedback Laser</td><td>4 / 4 / 4 / 12</td><td>5 / 4 / 4 / 13</td><td class="up">+1 bottleneck</td><td>InP tightness now has independent upstream and vendor-level confirmation.</td></tr>
-          <tr><td>Glass Core Package Substrate</td><td>3 / 3 / 4 / 10</td><td>2 / 3 / 4 / 9</td><td class="down">-1 bottleneck</td><td>Volume adoption is now expected closer to 2030.</td></tr>
-          <tr><td>Capacitors (Film, Electrolytic, Ceramic)</td><td>3 / 3 / 3 / 9</td><td>3 / 4 / 3 / 10</td><td class="up">+1 pricing</td><td>Selected price revisions were implemented as AI-server demand grew.</td></tr>
+          <tr><td>Capacitors (Film, Electrolytic, Ceramic)</td><td>3 / 4 / 3 / 10</td><td>4 / 4 / 3 / 11</td><td class="up">+1 bottleneck</td><td>High utilization, a 2.2 book-to-bill, and rising lead times now show a capacity constraint.</td></tr>
+          <tr><td>Secondary-Side Circulating Pumps</td><td>4 / 3 / 3 / 10</td><td>4 / 3 / 4 / 11</td><td class="up">+1 moat</td><td>Continuous-duty reliability and qualification make approved CDU-pump suppliers harder to replace.</td></tr>
+          <tr><td>Glass Core Package Substrate</td><td>2 / 3 / 4 / 9</td><td>1 / 3 / 4 / 8</td><td class="down">-1 bottleneck</td><td>Failed qualification and postponed investment remove the near-term scarcity case.</td></tr>
         </tbody>
       </table>
     </div>
@@ -122,25 +122,24 @@
   <section class="card">
     <h2>Important But No Score Change</h2>
     <ul>
-      <li><strong>ABF package substrate:</strong> Ibiden says demand remains above capacity, price and mix drove its guidance increase, and meaningful capacity takes at least two years. The row remains 5/5/5.</li>
-      <li><strong>MLCC:</strong> Taiyo Yuden's book-to-bill reached 1.72, its AI-server growth outlook rose to 150%, and selected distributor prices increased. The row remains 5/5/5.</li>
-      <li><strong>Low-loss PCB material:</strong> Resonac expects almost fourfold AI-server CCL growth, while special-glass demand and pricing stayed strong. The broad row remains 5/5/4.</li>
-      <li><strong>Power semiconductors:</strong> Infineon disclosed multi-year AI capacity reservations worth high-single-digit billions of euros. The broad row remains 5/5/4.</li>
-      <li><strong>HBM:</strong> Citi expects shortages to worsen into 2027 and customers are pursuing three-to-five-year supply agreements. The row remains 5/5/5.</li>
-      <li><strong>EML:</strong> The same InP and booking evidence confirms a row already at 5/5/5.</li>
+      <li><strong>ABF package substrate:</strong> A new expert check estimates a 30–50% ABF/T-glass gap, staged 8–10% price resets, and one-to-two-year qualification. The row remains 5/5/5.</li>
+      <li><strong>EML:</strong> Lumentum says demand is more than 30% above supply and pump lasers are sold out; Coherent's 1.6T ramp is accelerating. The row remains 5/5/5.</li>
+      <li><strong>Low-loss PCB material:</strong> High-speed glass may remain short for three years and AI PCB/CCL forecasts rose, but M8/M9/PTFE alternatives keep moat at 4. The row remains 5/5/4.</li>
+      <li><strong>Power semiconductors:</strong> Lead times rose again while MOSFET and power prices increased 12.8% and 11.3%. The broad row remains 5/5/4.</li>
+      <li><strong>HBM:</strong> New checks still show 2027–28 shortage conditions and firm pricing even after a lower Nvidia content assumption. The row remains 5/5/5.</li>
+      <li><strong>External CPO lasers:</strong> Lumentum, Coherent, and Third Bridge describe different suppliers and ramp dates by architecture. The row stays 5/4/4 pending design-specific sourcing clarity.</li>
     </ul>
   </section>
 
   <section class="card">
     <h2>Watchlist</h2>
     <ul>
-      <li><strong>Low-CTE and low-Dk glass cloth:</strong> Strong demand, price revisions, and no large near-term capacity announcement; no standalone scored row.</li>
-      <li><strong>InP laser substrates:</strong> A 7–10x capacity plan and possible large price resets; no standalone substrate row.</li>
-      <li><strong>Optical fiber and cable:</strong> Large new investment could meet today's tight demand but ease supply around 2028.</li>
-      <li><strong>Photonics SOI wafers:</strong> Multi-year capacity reservations and earlier 300 mm qualification; the table scores modulators, not SOI substrates.</li>
-      <li><strong>Texas grid-connection audits:</strong> Large builds may slow, but this is project-level timing evidence.</li>
-      <li><strong>Server CPU and custom ASIC capacity:</strong> Near-term CPU limits and a larger 2027-28 ramp remain outside the scored component set.</li>
-      <li><strong>Two-phase cooling, PCB drill bits, PPO resin, NAND/HBF storage, CPO alignment/test, 800V solid-state breakers, HVDC racks, neocloud execution, and orbital cooling:</strong> These remain visible watch items because the table has no directly matching row or the evidence is system-level.</li>
+      <li><strong>Low-CTE and T-glass cloth:</strong> Nitto Boseki may add another 30% of capacity and needs large price increases to fund it; no standalone scored row.</li>
+      <li><strong>InP laser substrates:</strong> JX targets roughly tenfold capacity and 50–60% long-run margins, while Coherent is moving more output to six-inch InP; no standalone substrate row.</li>
+      <li><strong>Optical fiber and cable:</strong> Amphenol's datacom fiber business doubled and is approaching Corning's scale; no standalone scored row.</li>
+      <li><strong>Server rails:</strong> King Slide's margins, patents, and server demand look strong, but 70% utilization and new capacity do not indicate a bottleneck.</li>
+      <li><strong>Server power supplies and HVDC racks:</strong> Delta expects server-power sales to more than double, and Flex is building 400V/800V capability; the evidence is system-level.</li>
+      <li><strong>Generic DRAM/NAND/HBF, CPO alignment and FAU, PCB drill bits, 300 mm silicon wafers, and neocloud deployment:</strong> These remain visible watch items because the table has no directly matching row or the evidence is project-level.</li>
     </ul>
   </section>
 </main>
