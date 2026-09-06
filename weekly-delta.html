@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Weekly Data Center Scorecard Delta - 2026-08-30</title>
+<title>Weekly Data Center Scorecard Delta - 2026-09-06</title>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta name="robots" content="noindex"/>
 <style>
@@ -47,60 +47,61 @@
 <body>
 <main class="wrap">
   <h1>Weekly Incremental Change</h1>
-  <div class="sub">2026-08-30 refresh versus 2026-08-23 baseline · Singapore-time week of August 24–30</div>
+  <div class="sub">2026-09-06 refresh versus 2026-08-30 baseline · Singapore-time week of August 31–September 6</div>
 
   <section class="card">
     <h2>One Page Summary</h2>
     <ul>
-      <li><strong>No component score changed.</strong> Tight conditions were confirmed across memory, MLCC, substrates, optics, and power semiconductors, but credible capacity additions or mixed architecture signals kept every row inside its prior 1–5 bucket.</li>
-      <li><strong>Pluggable optical transceivers stayed 4/4/4.</strong> Tight supply triggered long-term-agreement talks and 1.6T demand is strong, but there was no firm allocation or lead-time trigger and Luxshare plans major mid-2027 capacity.</li>
-      <li><strong>MLCC stayed 5/5/5.</strong> Distributor inventory hit a record low while the unit-price index rose 7% in four weeks; July export ASP rose about 21% year over year.</li>
-      <li><strong>HBM stayed 5/5/5 and SOCAMM stayed 5/5/3.</strong> Long-term agreements and price increases confirm tight supply, while Nvidia's memory de-spec changes mix rather than today's supply and pricing.</li>
-      <li><strong>Power semiconductors stayed 5/5/4.</strong> AI/data-center and SiC demand, full utilization, and price increases remain supportive. Uncertain 800V timing and broad competition prevent a moat change.</li>
-      <li>Research used 11 local sell-side HTML files containing 362 cards. Ten pre-window cards were excluded, leaving 352 in-window messages and 351 distinct Outlook targets; repeated coverage of the same event was grouped into evidence clusters.</li>
-      <li>No new Third Bridge summary, transcript export, or validated <code>/tmp/thirdbridge_clean_*</code> directory fell inside August 24–30. The August 15 package was already in the baseline.</li>
+      <li><strong>One component score changed.</strong> Pluggable Optical Transceiver moved from 4/4/4 to 5/4/4 because current supplier decommits now prove a live module-availability constraint.</li>
+      <li><strong>Why optics tightened:</strong> two Asian suppliers reportedly pulled back shipments to Microsoft, AWS, and Nvidia because laser supply worsened. Lumentum's InP-shortage thesis, Ciena's growing backlog, and possible US restrictions on Chinese modules independently reinforce the risk.</li>
+      <li><strong>Pricing and moat did not change.</strong> Strong demand has not yet produced a broad module-level price reset, and the transceiver supplier set remains diverse.</li>
+      <li><strong>MLCC stayed 5/5/5.</strong> Book-to-bill reached 1.5-2.2, utilization is near 95%, lead times stretched to 24-40-plus weeks, and suppliers are pursuing LTAs and price increases.</li>
+      <li><strong>ABF substrates and HBM stayed 5/5/5.</strong> The ABF gap may reach 30% in 2027, while HBM supply is meeting only about 50-70% of demand and the shortfall may persist through 2028.</li>
+      <li><strong>Power semiconductors stayed 5/5/4.</strong> Legacy capacity pressure supports pricing, but 800V GaN qualification and broad technology competition prevent a moat increase.</li>
+      <li>Research used 9 local sell-side HTML files containing 378 cards. Forty-eight pre-window cards were excluded, leaving 330 in-window messages and 329 distinct Outlook targets; repeated coverage of the same event was grouped into evidence clusters.</li>
+      <li>No new Third Bridge summary, transcript export, or validated <code>/tmp/thirdbridge_clean_*</code> directory fell inside August 31–September 6. The August 15 package was already in the baseline.</li>
       <li>No live Outlook, Gmail, web, browser, or GitHub source research was used.</li>
     </ul>
   </section>
 
   <section class="grid">
     <div class="metric">
-      <b>0</b>
+      <b>1</b>
       Bottleneck changes
-      <div class="small">Tightness and future relief offset</div>
+      <div class="small">Pluggable transceiver moved 4 to 5</div>
     </div>
     <div class="metric">
       <b>0</b>
       Pricing changes
-      <div class="small">Price gains confirm existing scores</div>
+      <div class="small">No broad module price reset</div>
     </div>
     <div class="metric">
       <b>0</b>
       Moat changes
-      <div class="small">No new qualification threshold</div>
+      <div class="small">Supplier breadth still limits change</div>
     </div>
   </section>
 
   <section class="card">
     <h2>Bottleneck</h2>
     <ul>
-      <li><span class="tag bottleneck">unchanged</span><strong>No bottleneck score moved.</strong> Pluggable transceiver supply is tight, but a credible mid-2027 capacity plan and no firm allocation or lead-time data keep the broad module row at 4.</li>
-      <li>HBM, MLCC, ABF substrates, and power semiconductors remain at bottleneck 5. CPO's later full-adoption timing helps pluggables, but difficult first-generation CPO manufacturing keeps its own bottleneck at 5.</li>
+      <li><span class="tag bottleneck">+1</span><strong>Pluggable Optical Transceiver increased to bottleneck 5.</strong> Supplier shipment decommits tied to worsening laser supply are a current availability trigger, not merely a demand forecast.</li>
+      <li>HBM, MLCC, ABF substrates, CPO, and power semiconductors remain at bottleneck 5. Their fresh evidence confirms the existing scores rather than creating a new bucket change.</li>
     </ul>
   </section>
 
   <section class="card">
     <h2>Pricing Power</h2>
     <ul>
-      <li><span class="tag pricing">unchanged</span><strong>No pricing score moved.</strong> MLCC export ASP rose about 21% year over year, memory cost keeps climbing, and Yangjie implemented a July price increase; those rows were already at pricing 5.</li>
-      <li>Pluggable transceiver demand is strong, but the evidence did not show a broad module-level price reset, so pricing remains 4.</li>
+      <li><span class="tag pricing">unchanged</span><strong>No pricing score moved.</strong> MLCC suppliers are discussing price increases, HBM contract prices remain firm, and legacy power capacity is tight; those rows were already at pricing 5.</li>
+      <li>Pluggable transceiver supply tightened, but the evidence did not show a broad module-level ASP reset. Ciena's growth also came with little gross-margin improvement, so pricing remains 4.</li>
     </ul>
   </section>
 
   <section class="card">
     <h2>Moat</h2>
     <ul>
-      <li><span class="tag moat">unchanged</span><strong>No moat score moved.</strong> MLCC process and patent advantages reinforce an existing 5. SOCAMM remains a Nvidia-specific format at 3, while broad transceiver and power-semiconductor supplier sets stay at 4.</li>
+      <li><span class="tag moat">unchanged</span><strong>No moat score moved.</strong> MLCC process and qualification barriers reinforce an existing 5. Broad transceiver and power-semiconductor supplier sets remain at 4, and quick capacitor second-sourcing kept that row at 3.</li>
     </ul>
   </section>
 
@@ -110,7 +111,7 @@
       <table>
         <thead><tr><th>Component</th><th>Previous</th><th>New</th><th>Change</th><th>Simple reason</th></tr></thead>
         <tbody>
-          <tr><td colspan="5"><strong>No scored component changed this week.</strong></td></tr>
+          <tr><td>Pluggable Optical Transceiver</td><td class="flat">4 / 4 / 4 / 12</td><td class="flat">5 / 4 / 4 / 13</td><td class="flat">+1 / 0 / 0 / +1</td><td>Two suppliers decommitted shipments because laser supply worsened; independent InP, backlog, and regulatory evidence confirms a current availability constraint.</td></tr>
         </tbody>
       </table>
     </div>
@@ -123,13 +124,14 @@
       <table>
         <thead><tr><th>Component</th><th>Score</th><th>Evidence</th><th>Why unchanged</th></tr></thead>
         <tbody>
-          <tr><td>Pluggable Optical Transceiver</td><td class="flat">4 / 4 / 4 / 12</td><td>3 clusters / 4 cards</td><td>LTA talks and strong 1.6T demand confirm pressure, but planned capacity and no firm allocation or lead-time trigger keep bottleneck at 4.</td></tr>
-          <tr><td>ABF Flip-Chip Package Substrate</td><td class="flat">5 / 5 / 5 / 15</td><td>2 clusters / 2 cards</td><td>AI package demand remains above capacity and ABF supply is still a named 2027 constraint.</td></tr>
-          <tr><td>Multilayer Ceramic Capacitor</td><td class="flat">5 / 5 / 5 / 15</td><td>5 clusters / 7 cards</td><td>Record-low inventory, longer lead times, rising prices, and technology barriers confirm an already-max row.</td></tr>
-          <tr><td>High Bandwidth Memory</td><td class="flat">5 / 5 / 5 / 15</td><td>4 clusters / 7 cards</td><td>Long-term agreements, supply shortfalls, and higher memory cost confirm all three axes at 5.</td></tr>
-          <tr><td>LPDDR5X / SOCAMM Memory Module</td><td class="flat">5 / 5 / 3 / 13</td><td>2 clusters / 2 cards</td><td>Costs are rising, but lower content per rack and a format-specific standard keep moat at 3.</td></tr>
-          <tr><td>Co-Packaged Optics Module</td><td class="flat">5 / 3 / 5 / 13</td><td>2 clusters / 2 cards</td><td>Later adoption delays pluggable displacement; difficult first-generation manufacturing keeps CPO's own bottleneck and moat intact.</td></tr>
-          <tr><td>Power Semiconductors</td><td class="flat">5 / 5 / 4 / 14</td><td>4 clusters / 4 cards</td><td>Demand, utilization, and pricing remain strong; 800V timing risk and broad competition keep moat at 4.</td></tr>
+          <tr><td>ABF Flip-Chip Package Substrate</td><td class="flat">5 / 5 / 5 / 15</td><td>3 clusters / 6 cards</td><td>A possible 30% gap, rising ASP and long-dated capacity relief confirm an already-max row.</td></tr>
+          <tr><td>Multilayer Ceramic Capacitor</td><td class="flat">5 / 5 / 5 / 15</td><td>4 clusters / 4 cards</td><td>High book-to-bill, near-full utilization, longer lead times, LTAs and planned price increases confirm all three axes at 5.</td></tr>
+          <tr><td>High Bandwidth Memory</td><td class="flat">5 / 5 / 5 / 15</td><td>4 clusters / 7 cards</td><td>Supply shortfalls, longer-duration LTAs and rising contract prices confirm an already-max row.</td></tr>
+          <tr><td>Distributed Feedback Laser</td><td class="flat">5 / 4 / 4 / 13</td><td>2 clusters / 2 cards</td><td>InP scarcity and laser-related shipment decommits confirm bottleneck 5, but there was no explicit DFB ASP reset.</td></tr>
+          <tr><td>Power Semiconductors</td><td class="flat">5 / 5 / 4 / 14</td><td>3 clusters / 3 cards</td><td>Legacy capacity pressure and pricing risk confirm the first two axes; broad competition keeps moat at 4.</td></tr>
+          <tr><td>Backplane PCB</td><td class="flat">5 / 3 / 4 / 12</td><td>1 cluster / 1 card</td><td>Rubin Ultra raises density and connector content, but this is content growth rather than a new PCB ASP signal.</td></tr>
+          <tr><td>Capacitors (Film, Electrolytic, Ceramic)</td><td class="flat">4 / 4 / 3 / 11</td><td>2 clusters / 3 cards</td><td>A PSU quality issue exposed execution risk, but fast second-sourcing and broad multi-sourcing prevent a tighter score.</td></tr>
+          <tr><td>Co-Packaged Optics Module</td><td class="flat">5 / 3 / 5 / 13</td><td>2 clusters / 2 cards</td><td>Bandwidth and power benefits reinforce adoption without a new supply, ASP or qualification threshold.</td></tr>
         </tbody>
       </table>
     </div>
@@ -138,12 +140,12 @@
   <section class="card">
     <h2>Watchlist</h2>
     <ul>
-      <li><strong>Nearline HDD components:</strong> One channel check sees the deficit widening through 2028 and fourth-quarter pricing up about 12%; no HDD-component rows exist.</li>
-      <li><strong>Generic NAND and enterprise SSD:</strong> AI storage demand and new supply plans are both rising; the table has no NAND or eSSD row.</li>
-      <li><strong>Optical fiber, cable, InP substrates, and epitaxy:</strong> Shortage and price-rise evidence sits beside future capacity relief, but these upstream products lack standalone rows.</li>
-      <li><strong>Large power transformers:</strong> Korean suppliers reported faster data-center demand and no cancellations; the evidence did not isolate an existing scored subcomponent.</li>
-      <li><strong>CPU and complete AI-server availability:</strong> System checks cite memory, CPUs, optics, and HDD as constraints, with B300 lead time moving from 16 to 32 weeks.</li>
-      <li><strong>Advanced packaging and test equipment:</strong> Equipment forecasts rose and some manufacturers remain production-limited, but tools are outside the component table.</li>
+      <li><strong>Photonics-SOI substrates:</strong> Soitec expects multi-year capacity reservations with about eight of its ten largest customers after a second guidance increase; no SOI substrate row exists.</li>
+      <li><strong>Nearline HDD components:</strong> Head, media, test, glass-substrate and HAMR-transition limits constrain output through 2027-28; no HDD-component rows exist.</li>
+      <li><strong>Generic DRAM, NAND, and enterprise SSD:</strong> Prices are rising and data-center memory supply is reported 20-30% below demand, while new capacity is also planned.</li>
+      <li><strong>Cold plates and microchannel cooling:</strong> Auras may enter Nvidia's Vera Rubin cold-plate chain and TSMC is integrating microchannels into packaging; neither concept has a row.</li>
+      <li><strong>Grid-level power systems:</strong> Land, power, transformers, switchgear, batteries, and complete power trains are gating deployments, but the evidence did not isolate an existing Tier-2 row.</li>
+      <li><strong>Complete AI servers and manufacturing equipment:</strong> OEM purchase commitments surged while hybrid-bonding timing moved toward 2028; finished systems and tools are outside the table.</li>
     </ul>
   </section>
 </main>
